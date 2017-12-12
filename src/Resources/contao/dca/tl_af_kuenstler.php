@@ -1,5 +1,7 @@
 <?php
 
+namespace yupdesign\AFKuenstler;
+
 /**
  * Die Tabelle listet alle Künstler auf.
  * An ihr werden nur allgemeine Informationen wie Name, Homepage, Bild usw.
@@ -51,7 +53,7 @@ $GLOBALS['TL_DCA']['tl_af_kuenstler'] = array
 			(
 				'label'				=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['delete'],
 				'href'				=> 'act=delete',
-				'icon'				=> 'edit.gif',
+				'icon'				=> 'delete.gif',
 				'attributes'	=> 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
 			)
 		)
@@ -60,7 +62,7 @@ $GLOBALS['TL_DCA']['tl_af_kuenstler'] = array
 
 	'palettes'	=> array
 	(
-		'default'	=> 'firstname, lastname;'
+		'default'	=> 'firstname, lastname, homepage;profile_img,profile_copyright'
 	),
 
 
@@ -87,6 +89,27 @@ $GLOBALS['TL_DCA']['tl_af_kuenstler'] = array
 			'inputType'	=> 'text',
 			'eval'			=> array('mandatory'=>true, 'unique'=>false, 'maxlength'=>128, 'tl_class'=>'w50'),
 			'sql'				=> "varchar(128) NOT NULL default ''"
-		)
+		),
+		'homepage'	=> array
+		(
+			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['homepage'],
+			'inputType'	=> 'text',
+			'eval'			=> array('mandatory'=>false, 'unique'=>false, 'maxlength'=>128, 'tl_class'=>'w50'),
+			'sql'				=> "varchar(128) NOT NULL default ''"
+		),
+		'profile_img' => array
+		(
+			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['profile_img'],
+			'inputType'	=> 'fileTree',
+			'eval'			=> array('filesOnly'=>true, 'fieldType'=>'radio', 'mandatory'=>true, 'tl_class'=>'long'),
+			'sql'				=> "binary(16) NULL"
+		),
+		'profile_copyright'	=> array
+		(
+			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['profile_copyright'],
+			'inputType'	=> 'text',
+			'eval'			=> array('mandatory'=>false, 'unique'=>false, 'maxlength'=>128, 'tl_class'=>'w50'),
+			'sql'				=> "varchar(128) NOT NULL default ''"
+		),
 	)
 )
