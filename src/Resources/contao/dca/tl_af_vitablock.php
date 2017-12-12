@@ -60,6 +60,11 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		(
 			'sql'	=> "int(10) unsigned NOT NULL auto_increment"
 		),
+		'pid' => array(
+			'foreignKey' => 'tl_af_kuenstler.id',
+			'sql' => "int(10) unsigned NOT NULL default '0'",
+			'relation' => array('type' => 'belongsTo', 'load' => 'eager'),
+		),
 		'tstamp'	=> array
 		(
 			'sql'	=> "int(10) unsigned NOT NULL default '0'"
