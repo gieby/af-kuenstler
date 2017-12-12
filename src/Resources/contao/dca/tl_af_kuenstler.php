@@ -15,6 +15,7 @@ $GLOBALS['TL_DCA']['tl_af_kuenstler'] = array
 	(
 		'dataContainer'			=> 'Table',
 		'enableVersioning'	=> true,
+		'ctable'						=> 'tl_af_vitablock',
 		'sql'								=> array
 		(
 			'keys' => array
