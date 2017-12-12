@@ -20,7 +20,7 @@ class Plguin implements BundlePluginInterface, RoutingPluginInterface
 	{
 		return 
 		[
-			BundleConfig::create('yupdesin\AFKuenstler\yupdesignAFKuenstler')
+			BundleConfig::create('yupdesign\AFKuenstler\yupdesignAFKuenstler')
 			->setLoadAfter(['Contao\CoreBundle\ContaoCoreBundle'])
 			->setReplace(['af']),
 		]
