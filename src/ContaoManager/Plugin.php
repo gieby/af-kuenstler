@@ -20,7 +20,7 @@ class Plugin implements BundlePluginInterface
 	{
 		return [
 				BundleConfig::create('yupdesign\AFKuenstler\yupdesignAFKuenstler')
-						->setLoadAfter(['Contao\CoreBundle\ContaoCoreBundle'])
+						->setLoadAfter(['Contao\CoreBundle\ContaoCoreBundle'],['MultiColumnWizard'])
 						->setReplace(['af']),
 		];
 	}
