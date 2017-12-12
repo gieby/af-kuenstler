@@ -82,6 +82,8 @@ $GLOBALS['TL_DCA']['tl_af_kuenstler'] = array
 			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['firstname'],
 			'inputType'	=> 'text',
 			'eval'			=> array('mandatory'=>true, 'unique'=>false, 'maxlength'=>128, 'tl_class'=>'w50'),
+			'search'		=> true,
+			'filter'		=> true,
 			'sql'				=> "varchar(128) NOT NULL default ''"
 		),
 		'lastname'	=> array
@@ -89,6 +91,8 @@ $GLOBALS['TL_DCA']['tl_af_kuenstler'] = array
 			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['lastname'],
 			'inputType'	=> 'text',
 			'eval'			=> array('mandatory'=>true, 'unique'=>false, 'maxlength'=>128, 'tl_class'=>'w50'),
+			'search'		=> true,
+			'filter'		=> true,
 			'sql'				=> "varchar(128) NOT NULL default ''"
 		),
 		'homepage'	=> array
