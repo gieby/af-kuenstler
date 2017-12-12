@@ -32,7 +32,8 @@ $GLOBALS['TL_DCA']['tl_af_kuenstler'] = array
 		(
 			'mode'						=> 1,
 			'fields'					=> array('lastname'),
-			'disableGrouping'	=> true
+			'disableGrouping'	=> true,
+			'panelLayout'			=> 'filter,search'
 		),
 
 		'label'	=> array
