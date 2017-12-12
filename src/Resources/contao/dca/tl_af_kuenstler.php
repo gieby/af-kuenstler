@@ -94,7 +94,7 @@ $GLOBALS['TL_DCA']['tl_af_kuenstler'] = array
 		(
 			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['homepage'],
 			'inputType'	=> 'text',
-			'eval'			=> array('mandatory'=>false, 'unique'=>false, 'maxlength'=>128, 'tl_class'=>'w50'),
+			'eval'			=> array('mandatory'=>false, 'unique'=>false, 'maxlength'=>128, 'tl_class'=>'w50', 'rgxp' => 'url'),
 			'sql'				=> "varchar(128) NOT NULL default ''"
 		),
 		'profile_img' => array
