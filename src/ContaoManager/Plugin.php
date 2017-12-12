@@ -18,11 +18,10 @@ class Plugin implements BundlePluginInterface, RoutingPluginInterface
 	 */
 	public function getBundles(ParserInterface $parser)
 	{
-		return 
-		[
-			BundleConfig::create('yupdesign\AFKuenstler\yupdesignAFKuenstler')
-			->setLoadAfter(['Contao\CoreBundle\ContaoCoreBundle'])
-			->setReplace(['af']),
-		]
+		return [
+				BundleConfig::create('yupdesign\AFKuenstler\yupdesignAFKuenstler')
+						->setLoadAfter(['Contao\CoreBundle\ContaoCoreBundle'])
+						->setReplace(['af']),
+		];
 	}
 }
