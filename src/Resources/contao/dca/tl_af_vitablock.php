@@ -51,5 +51,18 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 				'attributes'	=> 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
 			)
 		)
+	),
+
+
+	'fields'	=> array
+	(
+		'id'	=> array
+		(
+			'sql'	=> "int(10) unsigned NOT NULL auto_increment"
+		),
+		'tstamp'	=> array
+		(
+			'sql'	=> "int(10) unsigned NOT NULL default '0'"
+		)
 	)
 );
