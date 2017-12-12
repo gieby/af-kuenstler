@@ -112,4 +112,4 @@ $GLOBALS['TL_DCA']['tl_af_kuenstler'] = array
 			'sql'				=> "varchar(128) NOT NULL default ''"
 		),
 	)
-)
+	);
