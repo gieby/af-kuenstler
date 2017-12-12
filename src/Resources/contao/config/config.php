@@ -13,5 +13,5 @@ if ('BE' === TL_MODE) {
 } */
 
 $GLOBALS['BE_MOD']['af_galerie']['kuenstler'] = array (
-	'tables'	=> array('tl_af_kuenstler')
+	'tables'	=> array('tl_af_kuenstler','tl_af_vitablock')
 );
