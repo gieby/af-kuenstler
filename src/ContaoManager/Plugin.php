@@ -1,6 +1,6 @@
 <?php
-namespace yupdesign\AFKuenstler\ContaoManager;
 
+namespace yupdesign\AFKuenstler\ContaoManager;
 /**
  * Use-Statements für das normale manager-Plugin, als auch für Routing
  */
@@ -11,7 +11,7 @@ use Contao\ManagerPlugin\Routing\RoutingPluginInterface;
 use Symfony\Component\Config\Loader\LoaderResolverInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
 
-class Plguin implements BundlePluginInterface, RoutingPluginInterface
+class Plugin implements BundlePluginInterface, RoutingPluginInterface
 {
 	/**
 	 * {@inheritdoc}
