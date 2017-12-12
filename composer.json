@@ -20,6 +20,20 @@
 		"contao/manager-plugin": "<2.0 || >=3.0",
 		"symfony/symfony": "3.2.7"
 	},
+	"autoload": {
+		"psr-4": {
+			"yupdesign\\AFKuenstler\\": "src/"
+		},
+		"classmap": [
+			"src/Resources/contao"
+		],
+		"exclude-from-classmap": [
+			"src/Resources/contao/config",
+			"src/Resources/contao/dca",
+			"src/Resources/contao/languages",
+			"src/Resources/contao/templates"
+		]
+	},
 	"extra": {
 		"contao-manager-plugin": "yupdesign\\AFKuenstler\\ContaoManager\\Plugin"
 	}
