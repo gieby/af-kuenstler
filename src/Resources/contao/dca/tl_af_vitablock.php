@@ -57,7 +57,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 
 	'palettes'	=> array
 	(
-		'default'	=> 'entry'
+		'default'	=> '{entry_legend},title,type,block_short,block_long,block_pdf;{entries_legend},entries'
 	),
 
 
@@ -81,9 +81,49 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		(
 			'sql'	=> "int(10) unsigned NOT NULL default '0'"
 		),
-		'entry' => array
+		'title' => array
 		(
-			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['entry'],
+			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['block_title'],
+			'inputType'	=> 'text',
+			'eval'			=> array('mandatory'=>true, 'maxlength'=>128, 'tl_class'=>'w50'),
+			'sql'				=> "varchar(128) NOT NULL default ''"
+		),
+		'type'	=> array
+		(
+			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['lastname'],
+			'inputType'	=> 'select',
+			'options'		=> array('default','af_exhibition'),
+			'reference'	=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['type_ref'],
+			'eval'			=> array('tl_class'=>'w50'),
+			'sql'				=> "varchar(128) NOT NULL default ''"
+		),
+		'block_short'	=> array
+		(
+			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['block_short'],
+			'inputType'	=> 'checkbox',
+			'default'		=> 1,
+			'eval'			=> array('tl_class'=>'w50'),
+			'sql'				=> "char(1) NOT NULL default ''"
+		),
+		'block_long'	=> array
+		(
+			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['block_long'],
+			'inputType'	=> 'checkbox',
+			'default'		=> 1,
+			'eval'			=> array('tl_class'=>'w50'),
+			'sql'				=> "char(1) NOT NULL default ''"
+		),
+		'block_pdf'	=> array
+		(
+			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['block_pdf'],
+			'inputType'	=> 'checkbox',
+			'default'		=> 1,
+			'eval'			=> array('tl_class'=>'w50'),
+			'sql'				=> "char(1) NOT NULL default ''"
+		),
+		'entries' => array
+		(
+			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['entries'],
 			'exclude'		=> true,
 			'inputType'	=> 'multiColumnWizard',
 			'eval'			=> array
@@ -112,19 +152,19 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 					(
 						'label'	=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['display_short'],
 						'inputType'	=> 'checkbox',
-						'default'	=> true
+						'default'	=> 1
 					),	
 					'display_long'	=> array
 					(
 						'label'	=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['display_long'],
 						'inputType'	=> 'checkbox',
-						'default'	=> true
+						'default'	=> 1
 					),	
 					'display_pdf'	=> array
 					(
 						'label'	=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['display_pdf'],
 						'inputType'	=> 'checkbox',
-						'default'	=> true
+						'default'	=> 1
 					),	
 					'entry_text'	=> array
 					(
