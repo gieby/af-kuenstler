@@ -53,6 +53,11 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		)
 	),
 
+	'palettes'	=> array
+	(
+		'default'	=> 'entry'
+	),
+
 
 	'fields'	=> array
 	(
