@@ -9,7 +9,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 	(
 		'dataContainer'			=> 'Table',
 		'enableVersioning'	=> true,
-		'ptable'						=> 'tl_af_vitablock',
+		'ptable'						=> 'tl_af_kuenstler',
 		'sql'								=> array
 		(
 			'keys' => array
