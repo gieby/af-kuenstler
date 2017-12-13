@@ -24,8 +24,8 @@ $GLOBALS['TL_LANG']['tl_af_kuenstler']['display_pdf'][0] = 'PDF';
 $GLOBALS['TL_LANG']['tl_af_kuenstler']['entry_text'][0] = 'Eintrag';
 
 $GLOBALS['TL_LANG']['tl_af_kuenstler']['block_short'][0] = 'Kurzvita';
-$GLOBALS['TL_LANG']['tl_af_kuenstler']['block_short'][1] = 'Zeigt den entsprechenden Block in der jeweiligen Ausgabe an.'
+$GLOBALS['TL_LANG']['tl_af_kuenstler']['block_short'][1] = 'Zeigt den entsprechenden Block in der jeweiligen Ausgabe an.';
 $GLOBALS['TL_LANG']['tl_af_kuenstler']['block_long'][0] = 'Langvita';
-$GLOBALS['TL_LANG']['tl_af_kuenstler']['block_long'][1] = 'Zeigt den entsprechenden Block in der jeweiligen Ausgabe an.'
+$GLOBALS['TL_LANG']['tl_af_kuenstler']['block_long'][1] = 'Zeigt den entsprechenden Block in der jeweiligen Ausgabe an.';
 $GLOBALS['TL_LANG']['tl_af_kuenstler']['block_pdf'][0] = 'PDF';
-$GLOBALS['TL_LANG']['tl_af_kuenstler']['block_pdf'][1] = 'Zeigt den entsprechenden Block in der jeweiligen Ausgabe an.'
+$GLOBALS['TL_LANG']['tl_af_kuenstler']['block_pdf'][1] = 'Zeigt den entsprechenden Block in der jeweiligen Ausgabe an.';
