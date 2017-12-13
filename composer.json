@@ -26,7 +26,7 @@
 			"yupdesign\\AFKuenstler\\": "src/"
 		},
 		"classmap": [
-			"src/Resources/contao"
+			"src/Resources"
 		],
 		"exclude-from-classmap": [
 			"src/Resources/contao/config",
