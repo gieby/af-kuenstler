@@ -24,10 +24,11 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 	(
 		'sorting'	=> array
 		(
-			'mode'						=> 4,
-			'fields'					=> array('sorting'),
-			'headerFields'		=> array('lastname', 'firstname'),
-			'panelLayout'			=> 'filter,search'
+			'mode'										=> 4,
+			'fields'									=> array('sorting'),
+			'headerFields'						=> array('lastname', 'firstname'),
+			'panelLayout'							=> 'filter,search',
+			'child_record_callback'   => array('yupdesign\\AFKuenstler\\VitaBlock', 'listBlocks')
 		),
 
 		'label'	=> array
