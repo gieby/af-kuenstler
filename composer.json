@@ -24,16 +24,7 @@
 	"autoload": {
 		"psr-4": {
 			"yupdesign\\AFKuenstler\\": "src/"
-		},
-		"classmap": [
-			"src/Resources"
-		],
-		"exclude-from-classmap": [
-			"src/Resources/contao/config",
-			"src/Resources/contao/dca",
-			"src/Resources/contao/languages",
-			"src/Resources/contao/templates"
-		]
+		}
 	},
 	"extra": {
 		"contao-manager-plugin": "yupdesign\\AFKuenstler\\ContaoManager\\Plugin"
