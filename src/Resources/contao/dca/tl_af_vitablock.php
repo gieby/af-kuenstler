@@ -9,7 +9,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 	(
 		'dataContainer'			=> 'Table',
 		'enableVersioning'	=> true,
-		'ptable'						=> 'tl_af_kuenstler',
+		'ptable'						=> 'tl_af_vitablock',
 		'sql'								=> array
 		(
 			'keys' => array
@@ -41,13 +41,13 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		(
 			'edit'	=> array
 			(
-				'label'				=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['edit'],
+				'label'				=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['edit'],
 				'href'				=> 'act=edit',
 				'icon'				=> 'edit.gif'
 			),
 			'delete'	=> array
 			(
-				'label'				=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['delete'],
+				'label'				=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['delete'],
 				'href'				=> 'act=delete',
 				'icon'				=> 'delete.gif',
 				'attributes'	=> 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
@@ -69,7 +69,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		),
 		'pid' => array
 		(
-			'foreignKey' => 'tl_af_kuenstler.id',
+			'foreignKey' => 'tl_af_vitablock.id',
 			'sql' => "int(10) unsigned NOT NULL default '0'",
 			'relation' => array('type' => 'belongsTo', 'load' => 'eager'),
 		),
@@ -83,23 +83,23 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		),
 		'title' => array
 		(
-			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['block_title'],
+			'label'			=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['block_title'],
 			'inputType'	=> 'text',
 			'eval'			=> array('mandatory'=>true, 'maxlength'=>128, 'tl_class'=>'w50'),
 			'sql'				=> "varchar(128) NOT NULL default ''"
 		),
 		'type'	=> array
 		(
-			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['lastname'],
+			'label'			=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['lastname'],
 			'inputType'	=> 'select',
 			'options'		=> array('default','af_exhibition'),
-			'reference'	=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['type_ref'],
+			'reference'	=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['type_ref'],
 			'eval'			=> array('tl_class'=>'w50'),
 			'sql'				=> "varchar(128) NOT NULL default ''"
 		),
 		'block_short'	=> array
 		(
-			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['block_short'],
+			'label'			=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['block_short'],
 			'inputType'	=> 'checkbox',
 			'default'		=> 1,
 			'eval'			=> array('tl_class'=>'w50'),
@@ -107,7 +107,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		),
 		'block_long'	=> array
 		(
-			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['block_long'],
+			'label'			=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['block_long'],
 			'inputType'	=> 'checkbox',
 			'default'		=> 1,
 			'eval'			=> array('tl_class'=>'w50'),
@@ -115,7 +115,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		),
 		'block_pdf'	=> array
 		(
-			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['block_pdf'],
+			'label'			=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['block_pdf'],
 			'inputType'	=> 'checkbox',
 			'default'		=> 1,
 			'eval'			=> array('tl_class'=>'w50'),
@@ -123,7 +123,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		),
 		'entries' => array
 		(
-			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['entries'],
+			'label'			=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['entries'],
 			'exclude'		=> true,
 			'inputType'	=> 'multiColumnWizard',
 			'eval'			=> array
@@ -132,7 +132,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 				(
 					'date_from'	=> array
 					(
-						'label'	=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['date_from'],
+						'label'	=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['date_from'],
 						'inputType'	=> 'text',
 						'eval'	=> array
 						(
@@ -141,7 +141,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 					),
 					'date_to'	=> array
 					(
-						'label'	=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['date_to'],
+						'label'	=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['date_to'],
 						'inputType'	=> 'text',
 						'eval'	=> array
 						(
@@ -150,25 +150,25 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 					),
 					'display_short'	=> array
 					(
-						'label'	=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['display_short'],
+						'label'	=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['display_short'],
 						'inputType'	=> 'checkbox',
 						'default'	=> 1
 					),	
 					'display_long'	=> array
 					(
-						'label'	=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['display_long'],
+						'label'	=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['display_long'],
 						'inputType'	=> 'checkbox',
 						'default'	=> 1
 					),	
 					'display_pdf'	=> array
 					(
-						'label'	=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['display_pdf'],
+						'label'	=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['display_pdf'],
 						'inputType'	=> 'checkbox',
 						'default'	=> 1
 					),	
 					'entry_text'	=> array
 					(
-						'label'	=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['entry_text'],
+						'label'	=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['entry_text'],
 						'inputType'	=> 'text',
 						'eval'	=> array
 						(
