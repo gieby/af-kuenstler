@@ -60,7 +60,8 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		(
 			'sql'	=> "int(10) unsigned NOT NULL auto_increment"
 		),
-		'pid' => array(
+		'pid' => array
+		(
 			'foreignKey' => 'tl_af_kuenstler.id',
 			'sql' => "int(10) unsigned NOT NULL default '0'",
 			'relation' => array('type' => 'belongsTo', 'load' => 'eager'),
@@ -68,6 +69,36 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		'tstamp'	=> array
 		(
 			'sql'	=> "int(10) unsigned NOT NULL default '0'"
+		),
+		'entry' => array
+		(
+			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['entry'],
+			'exclude'		=> true,
+			'inputType'	=> 'multicolumnwizard',
+			'eval'			=> array
+			(
+				'columnFields'	=> array
+				(
+					'date_from'	=> array
+					(
+						'label'	=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['date_from'],
+						'inputType'	=> 'text',
+						'eval'	=> array
+						(
+							'rgxp'	=> 'natural', 'maxlength' => 4, 'style'	=> "width: 100px"
+						)
+					),
+					'date_to'	=> array
+					(
+						'label'	=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['date_to'],
+						'inputType'	=> 'text',
+						'eval'	=> array
+						(
+							'rgxp'	=> 'digit', 'maxlength' => 4, 'style'	=> "width: 100px"
+						)
+					)		
+				)
+			)
 		)
 	)
 );
