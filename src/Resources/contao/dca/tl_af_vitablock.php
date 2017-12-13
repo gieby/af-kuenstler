@@ -101,7 +101,34 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 						(
 							'rgxp'	=> 'digit', 'maxlength' => 4, 'style'	=> "width: 100px"
 						)
-					)		
+					),
+					'display_short'	=> array
+					(
+						'label'	=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['display_short'],
+						'inputType'	=> 'checkbox',
+						'default'	=> true
+					),	
+					'display_long'	=> array
+					(
+						'label'	=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['display_long'],
+						'inputType'	=> 'checkbox',
+						'default'	=> true
+					),	
+					'display_pdf'	=> array
+					(
+						'label'	=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['display_pdf'],
+						'inputType'	=> 'checkbox',
+						'default'	=> true
+					),	
+					'entry_text'	=> array
+					(
+						'label'	=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['entry_text'],
+						'inputType'	=> 'text',
+						'eval'	=> array
+						(
+							'style'	=> "width: 100px"
+						)
+					)
 				)
 			),
 			'sql'	=> "BLOB null"
