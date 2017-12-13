@@ -128,6 +128,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 			'inputType'	=> 'multiColumnWizard',
 			'eval'			=> array
 			(
+				'tl_class'	=> 'long',
 				'columnFields'	=> array
 				(
 					'date_from'	=> array
@@ -172,7 +173,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 						'inputType'	=> 'text',
 						'eval'	=> array
 						(
-							'style'	=> "width: 100px"
+							'tl_class'	=> "long"
 						)
 					)
 				)
