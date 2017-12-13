@@ -25,9 +25,8 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		'sorting'	=> array
 		(
 			'mode'						=> 4,
-			'flag'						=> 11,
-			'fields'					=> array('id'),
-			'disableGrouping'	=> true,
+			'fields'					=> array('sorting'),
+			'headerFields'		=> array('lastname', 'firstname'),
 			'panelLayout'			=> 'filter,search'
 		),
 
@@ -74,6 +73,10 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 			'relation' => array('type' => 'belongsTo', 'load' => 'eager'),
 		),
 		'tstamp'	=> array
+		(
+			'sql'	=> "int(10) unsigned NOT NULL default '0'"
+		),
+		'sorting' => array
 		(
 			'sql'	=> "int(10) unsigned NOT NULL default '0'"
 		),
