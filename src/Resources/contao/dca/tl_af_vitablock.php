@@ -90,7 +90,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		),
 		'type'	=> array
 		(
-			'label'			=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['lastname'],
+			'label'			=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['block_type'],
 			'inputType'	=> 'select',
 			'options'		=> array('default','af_exhibition'),
 			'reference'	=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['type_ref'],
