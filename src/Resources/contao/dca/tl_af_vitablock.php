@@ -98,7 +98,8 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 						)
 					)		
 				)
-			)
+			),
+			'sql'	=> "BLOB null"
 		)
 	)
 );
