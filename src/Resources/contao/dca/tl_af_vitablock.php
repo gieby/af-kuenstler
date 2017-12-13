@@ -79,7 +79,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		(
 			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['entry'],
 			'exclude'		=> true,
-			'inputType'	=> 'multicolumnwizard',
+			'inputType'	=> 'multiColumnWizard',
 			'eval'			=> array
 			(
 				'columnFields'	=> array
