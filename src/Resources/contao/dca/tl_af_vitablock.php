@@ -14,7 +14,8 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		(
 			'keys' => array
 			(
-				'id'				=> 'primary'
+				'id'				=> 'primary',
+				'pid'				=> 'index'
 			)
 		)
 	),
@@ -24,6 +25,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		'sorting'	=> array
 		(
 			'mode'						=> 4,
+			'flag'						=> 11
 			'fields'					=> array('id'),
 			'disableGrouping'	=> true,
 			'panelLayout'			=> 'filter,search'
@@ -31,7 +33,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 
 		'label'	=> array
 		(
-			'fields'					=> array('title'),
+			'fields'					=> array('id'),
 			'format'					=> '%s'
 		),
 
@@ -90,7 +92,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 						'inputType'	=> 'text',
 						'eval'	=> array
 						(
-							'rgxp'	=> 'natural', 'maxlength' => 4, 'style'	=> "width: 100px"
+							'rgxp'	=> 'natural', 'maxlength' => 4, 'minlenth' => 4, 'style'	=> "width: 100px"
 						)
 					),
 					'date_to'	=> array
