@@ -19,7 +19,7 @@ $GLOBALS['BE_MOD']['af_galerie']['kuenstler'] = array (
 /**
  * Verschieben der Galerieverwaltung in die neue Kategorie
  */
-$GLOBALS['BE_MOD']['content']['ausstellung'] = null;
+unset($GLOBALS['BE_MOD']['content']['ausstellung']);
 $GLOBALS['BE_MOD']['af_galerie']['ausstellung'] = array (
 	'icon'          =>  'system/modules/yd_galerieverwaltung/assets/icons/ausstellung.png',
 	'tables'        =>  array('tl_ausstellung', 'tl_werk'),
