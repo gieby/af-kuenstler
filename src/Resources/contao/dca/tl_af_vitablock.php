@@ -60,7 +60,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		'__selector__' => array('type'),
 		'default'	=> '{entry_legend},title,type,block_short,block_long,block_pdf',
 		'entries_default' => '{entry_legend},title,type,block_short,block_long,block_pdf;{entries_legend},entries',
-		'entries_af' => '{entry_legend},title,type,block_short,block_long,block_pdf;{af_legend}',
+		'entries_af' => '{entry_legend},title,type,block_short,block_long,block_pdf;{af_legend},entries_af',
 	),
 
 
@@ -178,6 +178,45 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 						(
 							'tl_class'	=> "long"
 						)
+					)
+				)
+			),
+			'sql'	=> "BLOB null"
+		),
+		'entries_af' => array
+		(
+			'label'			=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['entries_af'],
+			'exclude'		=> true,
+			'inputType'	=> 'multiColumnWizard',
+			'eval'			=> array
+			(
+				'tl_class'	=> 'long',
+				'columnFields'	=> array
+				(
+					'exhib_id' => array
+					(
+						'label'	=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['exhib_id'],
+						'inputType'	=> 'select',
+						'options_callback'  => array('\Galerieverwaltung', 'getExhibitionIDs'),
+						'eval'              => array('mandatory' => true, 'includeBlankOption' => true,'tl_class' => 'w50','chosen'=>true),
+					),
+					'display_short'	=> array
+					(
+						'label'	=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['display_short'],
+						'inputType'	=> 'checkbox',
+						'default'	=> 1
+					),	
+					'display_long'	=> array
+					(
+						'label'	=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['display_long'],
+						'inputType'	=> 'checkbox',
+						'default'	=> 1
+					),	
+					'display_pdf'	=> array
+					(
+						'label'	=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['display_pdf'],
+						'inputType'	=> 'checkbox',
+						'default'	=> 1
 					)
 				)
 			),
