@@ -97,7 +97,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 			'inputType'	=> 'select',
 			'options'		=> array('entries_default','entries_af'),
 			'reference'	=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['type_ref'],
-			'eval'			=> array('tl_class'=>'w50'),
+			'eval'			=> array('tl_class'=>'w50', 'submitOnChange' => true,),
 			'sql'				=> "varchar(128) NOT NULL default ''"
 		),
 		'block_short'	=> array
