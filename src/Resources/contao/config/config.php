@@ -16,12 +16,4 @@ $GLOBALS['BE_MOD']['af_galerie']['kuenstler'] = array (
 	'tables'	=> array('tl_af_kuenstler','tl_af_vitablock')
 );
 
-/**
- * Verschieben der Galerieverwaltung in die neue Kategorie
- */
-unset($GLOBALS['BE_MOD']['content']['ausstellung']);
-$GLOBALS['BE_MOD']['af_galerie']['ausstellung'] = array (
-	'icon'          =>  'system/modules/yd_galerieverwaltung/assets/icons/ausstellung.png',
-	'tables'        =>  array('tl_ausstellung', 'tl_werk'),
-	'importWerke'   =>  array('Galerieverwaltung','importWerke')
-);
+
