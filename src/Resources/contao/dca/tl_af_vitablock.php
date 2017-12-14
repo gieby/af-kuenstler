@@ -149,7 +149,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 						'inputType'	=> 'text',
 						'eval'	=> array
 						(
-							'rgxp'	=> 'digit', 'maxlength' => 4, 'style'	=> "width: 100px"
+							'rgxp'	=> 'alnum', 'maxlength' => 4, 'style'	=> "width: 100px"
 						)
 					),
 					'display_short'	=> array
