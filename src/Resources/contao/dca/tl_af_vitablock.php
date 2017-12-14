@@ -57,7 +57,10 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 
 	'palettes'	=> array
 	(
-		'default'	=> '{entry_legend},title,type,block_short,block_long,block_pdf;{entries_legend},entries'
+		'__selector__' => array('type'),
+		'default'	=> '{entry_legend},title,type,block_short,block_long,block_pdf',
+		'entries_default' => '{entry_legend},title,type,block_short,block_long,block_pdf;{entries_legend},entries',
+		'entries_af' => '{entry_legend},title,type,block_short,block_long,block_pdf;{af_legend}',
 	),
 
 
@@ -92,7 +95,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		(
 			'label'			=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['block_type'],
 			'inputType'	=> 'select',
-			'options'		=> array('default','af_exhibition'),
+			'options'		=> array('entries_default','entries_af'),
 			'reference'	=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['type_ref'],
 			'eval'			=> array('tl_class'=>'w50'),
 			'sql'				=> "varchar(128) NOT NULL default ''"
