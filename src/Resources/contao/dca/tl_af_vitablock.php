@@ -58,7 +58,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 	'palettes'	=> array
 	(
 		'__selector__' => array('type'),
-		'default'	=> '{entry_legend},title,type,block_short,block_long,block_pdf',
+		'default'	=> '{entry_legend},title,type,block_short,block_long,block_pdf;{entries_legend},entries',
 		'entries_default' => '{entry_legend},title,type,block_short,block_long,block_pdf;{entries_legend},entries',
 		'entries_af' => '{entry_legend},title,type,block_short,block_long,block_pdf;{af_legend},entries_af',
 	),
@@ -198,7 +198,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 						'label'	=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['exhib_id'],
 						'inputType'	=> 'select',
 						'options_callback'  => array('\Galerieverwaltung', 'getExhibitionIDs'),
-						'eval'              => array('mandatory' => true, 'includeBlankOption' => true,'tl_class' => 'w50','chosen'=>true),
+						'eval'              => array('mandatory' => true, 'includeBlankOption' => true,'tl_class' => 'long','chosen'=>true),
 					),
 					'display_short'	=> array
 					(
