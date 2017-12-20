@@ -16,4 +16,8 @@ $GLOBALS['BE_MOD']['af_galerie']['kuenstler'] = array (
 	'tables'	=> array('tl_af_kuenstler','tl_af_vitablock')
 );
 
-
+array_insert($GLOBALS['FE_MOD'], 2, array(
+	'miscellaneous' => array(
+		'kuenstler_liste' => 'yupdesign\\AFKuenstler\\Module\\KuenstlerListe',
+	)
+));
