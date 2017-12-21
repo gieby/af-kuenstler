@@ -32,7 +32,7 @@ class KuenstlerListe extends \Module
    */
   protected function compile()
   {
-    
+    $this->Template->test = '';
 
   }
 
