@@ -8,7 +8,7 @@ class KuenstlerListe extends \Module
   /**
    * @var string Template
    */
-  protected $strTemplate = 'kuenstler_liste';
+  protected $strTemplate = 'mod_kuenstler_liste';
 
   /**
    * @return string
