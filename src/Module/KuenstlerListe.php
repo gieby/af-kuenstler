@@ -26,4 +26,17 @@ class KuenstlerListe extends \Module
       return $template->parse();
     }
   }
+
+  /**
+   * Erstellt das Modul
+   */
+  protected function compile()
+  {
+    
+
+  }
+
+  /**
+   * Weitere Helferfunktionen, die für die Liste relevant sind.
+   */
 }
