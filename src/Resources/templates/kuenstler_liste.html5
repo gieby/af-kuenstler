@@ -1,1 +1,4 @@
-<?php $this->showTemplateVars(); ?>
+<div id="kuenster-liste">
+	here i am!
+	<?php $this->showTemplateVars(); ?>
+</div>
