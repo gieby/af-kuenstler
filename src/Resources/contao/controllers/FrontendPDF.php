@@ -42,8 +42,6 @@ class FrontendPDF extends \Frontend
     $pdf->SetSubject('Vita für ' . $firstname . ' '. $lastname);
     $pdf->SetKeywords('');
     $pdf->setFontSubsetting(false);
-    $pdf->setPrintHeader(false);
-    $pdf->setPrintFooter(false);
     $pdf->AddPage();
     $pdf->lastPage();
 	$pdf->Output(standardize(ampersand('vita', false)) . '.pdf', 'D');
