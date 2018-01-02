@@ -33,7 +33,7 @@ class FrontendPDF extends \Frontend
      */
     public function getPDF($lastname, $firstname) {
 
-    $pdf = new \VitaPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true);
+    $pdf = new VitaPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true);
 
     //
     $pdf->SetCreator('art+form');
