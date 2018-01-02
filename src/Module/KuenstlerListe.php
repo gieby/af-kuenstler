@@ -25,6 +25,8 @@ class KuenstlerListe extends \Module
       
       return $template->parse();
     }
+
+    return parent::generate();
   }
 
   /**
