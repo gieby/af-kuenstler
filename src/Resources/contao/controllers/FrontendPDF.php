@@ -44,6 +44,11 @@ class FrontendPDF extends \Frontend
     $pdf->setPrintHeader(false);
     $pdf->setPrintFooter(false);
     $pdf->AddPage();
+    $pdf->writeHTML('<p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p>
+    <p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p>
+    <p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p>
+    <p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p>
+    <p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p>');
     $pdf->lastPage();
 	$pdf->Output(standardize(ampersand('vita', false)) . '.pdf', 'D');
 
