@@ -10,7 +10,7 @@ use yupdesign\AFKuenstler\GeneratePDF;
 class PDFController extends Controller {
 
 	/**
-	 * @return string
+	 * @return JsonResponse
 	 * 
 	 * @Route("/pdf/{firstname}/{lastname}", name="artist_pdf", defaults={"_scope" = "frontend", "_token_check" = false})
 	 */
@@ -18,7 +18,7 @@ class PDFController extends Controller {
 	{
 		$this->container->get('contao.framework')->initialize();
 
-		$controller = new \yupdesign\AFKuenstler\GeneratePDF();
+		$controller = new GeneratePDF();
 
 		$data = $controller->getPDF($firstname,$lastname);
 

@@ -1,4 +1,5 @@
 <?php
+
 namespace yupdesign\AFKuenstler;
 
 use Psr\Log\LogLevel;
