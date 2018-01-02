@@ -1,0 +1,3 @@
+generate_pdf:
+  resource: "@yupdesignAFKuenstler/Controller/"
+  type: annotation

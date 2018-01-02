@@ -34,6 +34,24 @@ class KuenstlerListe extends \Module
    */
   protected function compile()
   {
+    $objKuenstler = $this->Database->prepare(
+      'SELECT fristname, lastname, profile_img FROM tl_af_kuenstler ORDER BY lastname'
+    )->execute();
+
+    if($objKuenstler->numRows < 1) {
+      /**
+       * keine Ergebnisse... handle this shit!
+       */
+
+       return;
+    }
+
+    while ($objKuenstler->next()) {
+        /**
+         * Ergebnisse... handle me!
+         */
+    }
+
     $this->Template->test = '';
 
   }
