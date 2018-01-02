@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class PDFController extends Controller {
 
 	/**
-	 * @Route("/kuenstler/{firstname}-{lastname}/pdf", name="pdf", defaults={"_scope" = "frontend", "_token_check" = false})
+	 * @Route("/pdf/{firstname}-{lastname}", name="pdf", defaults={"_scope" = "frontend", "_token_check" = false})
 	 */
 	public function pdfAction($firstname='',$lastname='')
 	{
