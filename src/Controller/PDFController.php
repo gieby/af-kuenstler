@@ -11,7 +11,7 @@ class PDFController extends Controller {
 	/**
 	 * @return string
 	 * 
-	 * @Route("/pdf/{firstname}-{lastname}", name="artist_pdf", defaults={"_scope" = "frontend", "_token_check" = false})
+	 * @Route("/pdf/{firstname}/{lastname}", name="artist_pdf", defaults={"_scope" = "frontend", "_token_check" = false})
 	 */
 	public function pdfAction($firstname='',$lastname='')
 	{
