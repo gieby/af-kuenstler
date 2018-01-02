@@ -24,6 +24,11 @@ class GeneratePDF extends \Frontend
         }
     }
 
+    /**
+     * Run the controller
+     *
+     * @return string
+     */
     public function getPDF($lastname, $firstname) {
     echo 'blar';
     \System::getContainer()
@@ -31,5 +36,6 @@ class GeneratePDF extends \Frontend
     ->log(LogLevel::INFO, 'Ein Log-Eintrag', array(
     'contao' => new ContaoContext(__CLASS__.'::'.__FUNCTION__, TL_GENERAL
     )));
+    return 'blar';
     }
 }
