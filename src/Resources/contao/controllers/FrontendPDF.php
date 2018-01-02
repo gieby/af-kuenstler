@@ -32,7 +32,7 @@ class FrontendPDF extends \Frontend
      */
     public function getPDF($lastname, $firstname) {
 
-    $pdf = new \TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true);
+    $pdf = new \VitaDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true);
 
     //
     $pdf->SetCreator('art+form');
@@ -44,11 +44,6 @@ class FrontendPDF extends \Frontend
     $pdf->setPrintHeader(false);
     $pdf->setPrintFooter(false);
     $pdf->AddPage();
-    $pdf->writeHTML('<p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p>
-    <p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p>
-    <p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p>
-    <p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p>
-    <p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p><p>!</p>');
     $pdf->lastPage();
 	$pdf->Output(standardize(ampersand('vita', false)) . '.pdf', 'D');
 

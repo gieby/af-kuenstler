@@ -10,8 +10,6 @@ use yupdesign\AF\FrontendPDF;
 class PDFController extends Controller {
 
 	/**
-	 * @return JsonResponse
-	 * 
 	 * @Route("/pdf/{firstname}-{lastname}", name="artist_pdf", defaults={"_scope" = "frontend", "_token_check" = false})
 	 */
 	public function pdfAction($firstname='',$lastname='')
@@ -21,8 +19,5 @@ class PDFController extends Controller {
 		$controller = new \yupdesign\AF\FrontendPDF();
 		
 		$data = $controller->getPDF($lastname,$firstname);
-
-		$response = new JsonResponse($data);
-		$response->send();
 	}
 }
