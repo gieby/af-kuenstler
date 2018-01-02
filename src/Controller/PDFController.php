@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class PDFController extends Controller {
 
 	/**
-	 * @Route("/pdf/{firstname}-{lastname}", name="kuenstler_pdf", defaults={"_scope" = "frontend", "_token_check" = false})
+	 * @Route("/pdf/{firstname}/{lastname}", name="kuenstler_pdf", defaults={"_scope" = "frontend", "_token_check" = false})
 	 */
 	public function pdfAction($firstname='',$lastname='')
 	{
