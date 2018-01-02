@@ -2,7 +2,7 @@
 
 namespace yupdesign\AFKuenstler;
 
-class VitaPDF extends TCPDF {
+class VitaPDF extends \TCPDF {
 
 	public function Header() {
 		$this->SetFont('helvetica','B',20);
