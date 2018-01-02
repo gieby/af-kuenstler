@@ -31,10 +31,25 @@ class FrontendPDF extends \Frontend
      * @return string
      */
     public function getPDF($lastname, $firstname) {
-    echo 'blar';
+
+    $pdf = new \TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true);
+
+    //
+    $pdf->SetCreator('art+form');
+    $pdf->SetAuthor('art+form');
+    $pdf->SetTitle($firstname . ' '. $lastname . ' - Vita');
+    $pdf->SetSubject('Vita für ' . $firstname . ' '. $lastname);
+    $pdf->SetKeywords('');
+    $pdf->setFontSubsetting(false);
+    $pdf->setPrintHeader(false);
+    $pdf->setPrintFooter(false);
+    $pdf->AddPage();
+    $pdf->lastPage();
+	$pdf->Output(standardize(ampersand('vita', false)) . '.pdf', 'D');
+
     \System::getContainer()
     ->get('monolog.logger.contao')
-    ->log(LogLevel::INFO, 'Ein Log-Eintrag', array(
+    ->log(LogLevel::INFO, 'PDF erstellt für' . $firstname . ' ' . $lastname, array(
     'contao' => new ContaoContext(__CLASS__.'::'.__FUNCTION__, TL_GENERAL
     )));
     return 'blar';
