@@ -2,10 +2,10 @@
 
 namespace yupdesign\AFKuenstler\Controller;
 
-use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use yupdesign\AF\GeneratePDF;
+use yupdesign\AF\FrontendPDF;
 
 class PDFController extends Controller {
 
@@ -18,9 +18,11 @@ class PDFController extends Controller {
 	{
 		$this->container->get('contao.framework')->initialize();
 
-		$controller = new \yupdesign\AF\GeneratePDF();
+		$controller = new \yupdesign\AF\FrontendPDF();
 
-		$data = $controller->getPDF($firstname,$lastname);
+		throw new Exception("Error Processing Request", 1);
+		
+		$data = $controller->getPDF($lastname,$firstname);
 		$data .= 'blubb';
 
 		$response = new JsonResponse($data);

@@ -5,7 +5,7 @@ namespace yupdesign\AF;
 use Psr\Log\LogLevel;
 use Contao\CoreBundle\Monolog\ContaoContext;
 
-class GeneratePDF extends \Frontend
+class FrontendPDF extends \Frontend
 {
 	/**
      * Initialize the object (do not remove)
