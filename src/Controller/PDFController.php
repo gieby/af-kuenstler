@@ -18,9 +18,10 @@ class PDFController extends Controller {
 	{
 		$this->container->get('contao.framework')->initialize();
 
-		$controller = new GeneratePDF();
+		$controller = new \yupdesign\AF\GeneratePDF();
 
 		$data = $controller->getPDF($firstname,$lastname);
+		$data .= 'blubb';
 
 		$response = new JsonResponse($data);
 		$response->send();
