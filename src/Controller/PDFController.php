@@ -15,7 +15,7 @@ class PDFController extends Controller {
 	 */
 	public function pdfAction($firstname='',$lastname='')
 	{
-		$this->container->get("contao.fromework")->initialize();
+		$this->container->get('contao.framework')->initialize();
 
 		$controller = new \yupdesign\AFKuenstler\GeneratePDF();
 
