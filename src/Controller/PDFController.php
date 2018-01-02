@@ -16,7 +16,7 @@ class PDFController extends Controller {
 	{
 		$this->container->get("contao.fromework")->initialize();
 
-		//$controller = new \yupdesign\AFKuenstler\GeneratePDF();
+		$controller = new \yupdesign\AFKuenstler\GeneratePDF();
 
 		if($firstname != '' && $lastname != '') {
 		
