@@ -19,8 +19,6 @@ class PDFController extends Controller {
 		$this->container->get('contao.framework')->initialize();
 
 		$controller = new \yupdesign\AF\FrontendPDF();
-
-		throw new Exception("Error Processing Request", 1);
 		
 		$data = $controller->getPDF($lastname,$firstname);
 		$data .= 'blubb';
