@@ -5,7 +5,7 @@ namespace yupdesign\AFKuenstler\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use yupdesign\AFKuenstler\GeneratePDF;
+use yupdesign\AF\GeneratePDF;
 
 class PDFController extends Controller {
 

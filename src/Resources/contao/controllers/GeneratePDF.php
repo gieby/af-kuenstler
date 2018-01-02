@@ -1,6 +1,6 @@
 <?php
 
-namespace yupdesign\AFKuenstler;
+namespace yupdesign\AF;
 
 use Psr\Log\LogLevel;
 use Contao\CoreBundle\Monolog\ContaoContext;
