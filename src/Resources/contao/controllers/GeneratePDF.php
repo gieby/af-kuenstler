@@ -25,6 +25,10 @@ class GeneratePDF extends \Frontend
     }
 
 		public function getPDF($lastname, $firstname) {
-			
+			\System::getContainer()
+      ->get('monolog.logger.contao')
+      ->log(LogLevel::INFO, 'Ein Log-Eintrag', array(
+      'contao' => new ContaoContext(__CLASS__.'::'.__FUNCTION__, TL_GENERAL
+      )));
 		}
 }

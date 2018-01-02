@@ -19,7 +19,9 @@ class PDFController extends Controller {
 		//$controller = new \yupdesign\AFKuenstler\GeneratePDF();
 
 		if($firstname != '' && $lastname != '') {
-			$data = $controller->getPDF($firstname,$lastname);
+		
 		}
+
+		$data = $controller->getPDF($firstname,$lastname);
 	}
 }

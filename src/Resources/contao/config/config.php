@@ -19,5 +19,9 @@ $GLOBALS['BE_MOD']['af_galerie']['kuenstler'] = array (
 array_insert($GLOBALS['FE_MOD'], 2, array(
 	'miscellaneous' => array(
 		'kuenstler_liste' => 'yupdesign\\AFKuenstler\\Module\\KuenstlerListe',
+	),
+	'af_pdf' => array
+	(
+		'gen_pdf'	=> 'yupdesign\AFKuenstler\ModulePDF',
 	)
 ));
