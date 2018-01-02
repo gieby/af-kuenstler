@@ -4,6 +4,7 @@ namespace yupdesign\AF;
 
 use Psr\Log\LogLevel;
 use Contao\CoreBundle\Monolog\ContaoContext;
+use yupdesign\AFKuenstler\VitaPDF;
 
 class FrontendPDF extends \Frontend
 {

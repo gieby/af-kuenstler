@@ -1,5 +1,7 @@
 <?php
 
+namespace yupdesign\AFKuenstler;
+
 class VitaPDF extends TCPDF {
 
 	public function Header() {
