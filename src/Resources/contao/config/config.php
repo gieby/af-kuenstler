@@ -22,6 +22,6 @@ array_insert($GLOBALS['FE_MOD'], 2, array(
 	),
 	'af_pdf' => array
 	(
-		'gen_pdf'	=> 'yupdesign\AFKuenstler\ModulePDF',
+		'pdf'	=> 'yupdesign\AFKuenstler\ModulePDF',
 	)
 ));
