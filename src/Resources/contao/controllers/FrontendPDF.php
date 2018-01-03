@@ -42,25 +42,36 @@ class FrontendPDF extends \Frontend
         'SELECT firstname, lastname, profile_img FROM tl_af_kuenstler ORDER BY lastname'
       )->execute(1);
 
+    $artist_fname = $objKuenstler->firstname;
+    $artist_lname = $objKuenstler->lastname
+    $artist_image = \FilesModel::findByUuid($this->singleSRC)->$path;
+
     
 
     $pdf = new VitaPDF();
 
-    //
+    // allgemeine PDF-Einstellungen für Vita
     $pdf->SetCreator('art+form');
     $pdf->SetAuthor('art+form');
-    $pdf->SetTitle($objKuenstler->firstname . ' '. $objKuenstler->lastname . ' - Vita');
-    $pdf->SetSubject('Vita für ' . $objKuenstler->firstname . ' '. $objKuenstler->firstname);
+    $pdf->SetTitle($artist_fname . ' '. $artist_lname . ' - Vita');
+    $pdf->SetSubject('Vita für ' . $artist_fname . ' '. $artist_lname);
+
     $pdf->AddPage();
     $pdf->SetFont('Arial','B',16);
-    $pdf->Cell(40,10,$objKuenstler->firstname . ' '. $objKuenstler->lastname);
+    $pdf->Cell(40,10,$artist_fname . ' '. $artist_lname);
+    $pdf->Ln(10);
+    $pdf->Image($artist_image);
     $pdf->Ln(10);
     $pdf->displayBasicTable('Testweise',['blar']);
-	$finished_pdf = $pdf->Output('S',standardize(ampersand('vita', false)) . '.pdf', 'D');
+    
+    // fertige PDF als String zurück an den Controller schicken
+    $finished_pdf = $pdf->Output('S',standardize(ampersand('vita', false)) . '.pdf', 'D');
 
+
+    // @todo nur zu Debugzwecken ?
     \System::getContainer()
     ->get('monolog.logger.contao')
-    ->log(LogLevel::INFO, 'PDF erstellt für ' . $objKuenstler->firstname . ' ' . $objKuenstler->firstname, array(
+    ->log(LogLevel::INFO, 'PDF erstellt für ' . $artist_fname . ' ' . $artist_lname, array(
     'contao' => new ContaoContext(__CLASS__.'::'.__FUNCTION__, TL_GENERAL
     )));
 
