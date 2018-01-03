@@ -16,7 +16,7 @@
 		"php": ">=5.6",
 		"contao/core-bundle": ">=4.4",
 		"menatwork/contao-multicolumnwizard": "^3.3",
-		"tecnickcom/tcpdf": "6.2.*"
+		"setasign/fpdf": "1.8.*"
 	},
 	"conflict": {
 		"contao/manager-plugin": "<2.0 || >=3.0",
