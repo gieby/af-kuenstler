@@ -34,7 +34,7 @@ class VitaPDF extends \FPDF {
 	/**
 	 * 
 	 */
-	public function displayExhibitionTable($data) {
+	public function displayExhibitionsTable($data) {
 		$this->setFont('Arial','B',10);
 		$this->Write(10,$data['title']);
 		$this->setFont('');
