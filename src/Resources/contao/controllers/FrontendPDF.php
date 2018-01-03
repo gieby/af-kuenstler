@@ -44,15 +44,7 @@ class FrontendPDF extends \Frontend
 
     $artist_fname = $objKuenstler->firstname;
     $artist_lname = $objKuenstler->lastname;
-    $artist_image = \FilesModel::findByUuid($objKuenstler->profile_img);
-
-    if($artist_image == null) {
-        $artist_image = 'FEHLER';
-    } else {
-        $artist_image = $artist_image->path;
-    }
-
-    
+    $artist_image = \FilesModel::findByUuid($objKuenstler->profile_img);    
 
     $pdf = new VitaPDF();
 
@@ -67,12 +59,11 @@ class FrontendPDF extends \Frontend
     $pdf->Write(10,$artist_fname . ' '. $artist_lname);
     $pdf->Ln();
     
-    
-    $pdf->Write(10,$artist_image);
-    
-    
-   
-    $pdf->Ln(10);
+    if($artist_image != null) {
+        $pdf->Image($artist_image->path);
+        $pdf->Ln(10);
+    }
+
     $pdf->displayBasicTable('Testweise',[['01.01.2018','Neujahr'],['02.01.2018','Kein Neujahr']]);
     
     // fertige PDF als String zurück an den Controller schicken
