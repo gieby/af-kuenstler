@@ -2,9 +2,9 @@
 
 namespace yupdesign\AFKuenstler;
 
-use setasign\Fpdi;
+use setasign\Fpdi\Fpdi;
 
-class VitaPDF extends \Fpdi {
+class VitaPDF extends Fpdi {
 
 	/**
 	 * @todo: ggf. werden Header und Footer durch ein Template ersetzt!
