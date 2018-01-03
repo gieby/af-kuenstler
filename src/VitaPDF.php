@@ -20,13 +20,13 @@ class VitaPDF extends \FPDF {
 		$this->Write(8,$header);
 		$this->Ln();
 		$this->setFont('');
-		
+
 		foreach ($data as $row) {
 			$year = $row[0];
 			$entry = $row[1];
-			$this->Cell(40,8,$year,'LR');
-			$this->Cell(0,8,$entry,'LR');
-			$this->Ln()
+			$this->Cell(40,8,$year);
+			$this->Cell(0,8,$entry);
+			$this->Ln();
 		}
 	}
 
