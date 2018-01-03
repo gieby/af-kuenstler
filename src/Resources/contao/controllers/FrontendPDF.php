@@ -43,7 +43,7 @@ class FrontendPDF extends \Frontend
     $pdf->AddPage();
     $pdf->SetFont('Arial','B',16);
     $pdf->Cell(40,10,'Hello World!');
-	$pdf->Output('S',standardize(ampersand('vita', false)) . '.pdf', 'D');
+	$finished_pdf = $pdf->Output('S',standardize(ampersand('vita', false)) . '.pdf', 'D');
 
     \System::getContainer()
     ->get('monolog.logger.contao')
@@ -51,6 +51,6 @@ class FrontendPDF extends \Frontend
     'contao' => new ContaoContext(__CLASS__.'::'.__FUNCTION__, TL_GENERAL
     )));
 
-    return $pdf;
+    return $finished_pdf;
     }
 }
