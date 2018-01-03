@@ -63,32 +63,26 @@ class VitaPDF extends \FPDF {
 
 		// [1]
 		if($from != '' && $to == '') {
-			$this->Cell(40,7,$from);
+			$this->Cell(35,7,$from);
 			return;
 		}
 
 		if($from == '' && $to != '') {
-			$this->Cell(22,7,'bis');
-			$this->Cell(18,7,$to);
+			$this->Cell(35,7,'bis ' . $to);
 			return;
 		}
 
 		if($from != '' && $to == '...') {
-			$this->Cell(22,7,'seit');
-			$this->Cell(18,7,$from);
+			$this->Cell(35,7,'seit ' . $from);
 			return;
 		}
 
 		if($to - $from == 1) {
-			$this->Cell(18,7,$from);
-			$this->Cell(4,7,'/');
-			$this->Cell(18,7,$to);
+			$this->Cell(35,7,$from . '/' . $to);
 			return;
 		}
 
-		$this->Cell(18,7,$from);
-		$this->Cell(4,7,'-');
-		$this->Cell(18,7,$to);
+		$this->Cell(35,7,$from . '-' . $to);
 		return;
 	}
 }
