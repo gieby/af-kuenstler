@@ -45,6 +45,6 @@ class FrontendPDF extends \Frontend
     $pdf->Cell(40,10,'Hello World!');
 	$pdf->Output(standardize(ampersand('vita', false)) . '.pdf', 'D');
 
-    return;
+    return 'done';
     }
 }
