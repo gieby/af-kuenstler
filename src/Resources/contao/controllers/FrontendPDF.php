@@ -43,7 +43,7 @@ class FrontendPDF extends \Frontend
     $pdf->AddPage();
     $pdf->SetFont('Arial','B',16);
     $pdf->Cell(40,10,'Hello World!');
-	$pdf->Output('I',standardize(ampersand('vita', false)) . '.pdf', 'D');
+	$pdf->Output('S',standardize(ampersand('vita', false)) . '.pdf', 'D');
 
     \System::getContainer()
     ->get('monolog.logger.contao')
