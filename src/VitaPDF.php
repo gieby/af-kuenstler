@@ -25,8 +25,6 @@ class VitaPDF extends \FPDF {
 			$this->Cell(40,7,$row[0],'LR');
 			$this->Cell(0,7,utf8_decode($row[5]),'LR');
 			$this->Ln(7);
-
-			$this->Write(7,utf8_decode(implode(',',$row)));
 		}
 	}
 
