@@ -89,11 +89,10 @@ class FrontendPDF extends \Frontend
         $pdf->Ln(10);
     }
 
-    //$pdf->displayBasicTable('Testweise',[['01.01.2018','Neujahr'],['02.01.2018','Kein Neujahr']]);
-    $pdf->Write(10,$artist_blocks);
-
-
-
+    foreach ($artist_blocks as $title => $entries) {
+        $pdf->displayBasicTable($title,$entries);
+    }
+    
     // fertige PDF als String zurück an den Controller schicken
     $finished_pdf = $pdf->Output('S',standardize(ampersand('vita', false)) . '.pdf', 'D');
 
