@@ -22,7 +22,7 @@ class VitaPDF extends \FPDF {
 		$this->setFont('');
 
 		foreach ($data as $row) {
-			$this->Write(0,implode(',',$row)));
+			$this->Write(0,implode(',',$row));
 			$year = $row[0];
 			$entry = $row[1];
 			$this->Cell(40,7,$year);
