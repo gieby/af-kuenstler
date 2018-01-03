@@ -20,6 +20,7 @@ class PDFController extends Controller {
 		
 		$data = $controller->getPDF($lastname,$firstname);
 
-		return new Response($data);
+		$response = new Response($data);
+		$response->headers->set('Content-Type', 'application/pdf');
 	}
 }
