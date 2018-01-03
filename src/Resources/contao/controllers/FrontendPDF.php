@@ -29,7 +29,8 @@ class FrontendPDF extends \Frontend
 
 
     /**
-     * 
+     * Liefert alle Blöcke zurück, welche nicht mit Ausstellungen in 
+     * Zusammenhang stehen.
      */
     private function getBlocks($artist_id) {
         $objBlocks = $this->Database->prepare(
@@ -43,6 +44,22 @@ class FrontendPDF extends \Frontend
         }
 
         return $returnBlocks;
+    }
+
+
+    /**
+     * 
+     */
+    private function getExhibitions($artist_id) {
+        $objBlock = $this->Database->prepare(
+			'SELECT title, entries_af FROM tl_af_vitablock WHERE pid=' . $artist_id .' AND type="entries_af"'
+        )->execute(1);
+
+		$returnBlock = array();
+        $returnBlock['title'] = $objBlock->title;
+        $returnBlock['entries'] = deserialize($objBlocks->entries_af);
+
+        return $returnBlock;
     }
 
 
@@ -70,6 +87,7 @@ class FrontendPDF extends \Frontend
     $artist_lname = $objKuenstler->lastname;
     $artist_image = \FilesModel::findByUuid($objKuenstler->profile_img);    
     $artist_blocks = $this->getBlocks($objKuenstler->id);
+    $artist_exhibitions = $this->getExhibitions($objKuenstler->id);
 
     $pdf = new VitaPDF();
 
@@ -81,7 +99,7 @@ class FrontendPDF extends \Frontend
     $pdf->SetMargins(21.1,13.5,13.5);
 
     $pdf->AddPage();
-    $pdf->SetFont('Arial','B',16);
+    $pdf->SetFont('Arial','B',14);
     $pdf->Write(10,$artist_fname . ' '. $artist_lname);
     $pdf->Ln();
     
@@ -93,6 +111,8 @@ class FrontendPDF extends \Frontend
     foreach ($artist_blocks as $title => $entries) {
         $pdf->displayBasicTable($title,$entries);
     }
+
+    $pdf->displayExhibitionsTable($artist_exhibitions);
 
     // fertige PDF als String zurück an den Controller schicken
     $finished_pdf = $pdf->Output('S',standardize(ampersand('vita', false)) . '.pdf', 'D');

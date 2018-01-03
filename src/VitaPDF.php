@@ -15,6 +15,9 @@ class VitaPDF extends \FPDF {
 
 	}
 
+	/**
+	 * 
+	 */
 	public function displayBasicTable($header='',$data) {
 		$this->setFont('Arial','B',10);
 		$this->Write(10,$header);
@@ -28,8 +31,18 @@ class VitaPDF extends \FPDF {
 		}
 	}
 
-	public function displayExhibitionTable() {
+	/**
+	 * 
+	 */
+	public function displayExhibitionTable($data) {
+		$this->setFont('Arial','B',10);
+		$this->Write(10,$data['title']);
+		$this->setFont('');
+		$this->Ln();
 
+		foreach ($data['entries'] as $row) {
+			$this->printExhibCells($row['exhib_id']);
+		}
 	}
 
 	/**
@@ -83,6 +96,16 @@ class VitaPDF extends \FPDF {
 		}
 
 		$this->Cell(35,7,$from . ' - ' . $to);
+		return;
+	}
+
+
+	/**
+	 * Die Funktion spielt in das aktuelle Ausstellungsmodul mit rein!
+	 */
+	private function printExhibCells($exhib_id) {
+		$this->Cell(35,7,'xxxx');
+		$this->Cell(0,7,'Ausstellungs-ID: ' . $exhib_id);
 		return;
 	}
 }
