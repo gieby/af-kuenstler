@@ -45,6 +45,11 @@ class FrontendPDF extends \Frontend
     $pdf->Cell(40,10,'Hello World!');
 	$pdf->Output(standardize(ampersand('vita', false)) . '.pdf', 'D');
 
-    return 'done';
+    \System::getContainer()
+    ->get('monolog.logger.contao')
+    ->log(LogLevel::INFO, 'PDF erstellt für' . $firstname . ' ' . $lastname, array(
+    'contao' => new ContaoContext(__CLASS__.'::'.__FUNCTION__, TL_GENERAL
+    )));
+    return 'blar';
     }
 }
