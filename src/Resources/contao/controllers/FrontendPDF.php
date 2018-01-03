@@ -43,6 +43,7 @@ class FrontendPDF extends \Frontend
     $pdf->AddPage();
     $pdf->SetFont('Arial','B',16);
     $pdf->Cell(40,10,'Hello World!');
+    $pdf->Ln(10);
     $pdf->displayBasicTable('Testweise',['blar']);
 	$finished_pdf = $pdf->Output('S',standardize(ampersand('vita', false)) . '.pdf', 'D');
 
