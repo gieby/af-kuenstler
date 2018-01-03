@@ -100,8 +100,8 @@ class FrontendPDF extends \Frontend
 
     $pdf->AddPage();
 
-    $pfd->Image('/files/artundform_layout/images/vita_bg.jpg',0,0,$pdf->w,$pdf->h);
-    
+    $pdf->Image('/files/artundform_layout/images/vita_bg.jpg',0,0,$pdf->w,$pdf->h);
+
     $pdf->SetFont('Arial','B',14);
     $pdf->Write(10,$artist_fname . ' '. $artist_lname);
     $pdf->Ln();
