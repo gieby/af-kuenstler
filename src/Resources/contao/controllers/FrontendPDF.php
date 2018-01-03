@@ -92,7 +92,7 @@ class FrontendPDF extends \Frontend
     foreach ($artist_blocks as $title => $entries) {
         $pdf->displayBasicTable($title,$entries);
     }
-    
+
     // fertige PDF als String zurück an den Controller schicken
     $finished_pdf = $pdf->Output('S',standardize(ampersand('vita', false)) . '.pdf', 'D');
 
@@ -101,12 +101,6 @@ class FrontendPDF extends \Frontend
     \System::getContainer()
     ->get('monolog.logger.contao')
     ->log(LogLevel::INFO, 'PDF erstellt für ' . $artist_fname . ' ' . $artist_lname, array(
-    'contao' => new ContaoContext(__CLASS__.'::'.__FUNCTION__, TL_GENERAL
-    )));
-
-    \System::getContainer()
-    ->get('monolog.logger.contao')
-    ->log(LogLevel::INFO, implode(',',$artist_blocks), array(
     'contao' => new ContaoContext(__CLASS__.'::'.__FUNCTION__, TL_GENERAL
     )));
 
