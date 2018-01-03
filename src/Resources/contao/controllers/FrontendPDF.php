@@ -62,7 +62,7 @@ class FrontendPDF extends \Frontend
     $pdf->Ln(10);
     $pdf->Image($artist_image);
     $pdf->Ln(10);
-    $pdf->displayBasicTable('Testweise',['blar']);
+    $pdf->displayBasicTable('Testweise',[['01.01.2018','Neujahr'],['02.01.2018','Kein Neujahr']]);
     
     // fertige PDF als String zurück an den Controller schicken
     $finished_pdf = $pdf->Output('S',standardize(ampersand('vita', false)) . '.pdf', 'D');

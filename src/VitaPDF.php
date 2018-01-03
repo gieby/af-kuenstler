@@ -22,7 +22,10 @@ class VitaPDF extends \FPDF {
 		$this->Cell(0,10,$header,1,0,'C');
 		
 		foreach ($data as $row) {
-			$this->Cell()
+			$year = $row[0];
+			$entry = $row[1];
+			$this->Cell($tableWidths[0],10,$year,0,0);
+			$this->MultiCell(0,10,$entry,0,'L');
 		}
 	}
 
