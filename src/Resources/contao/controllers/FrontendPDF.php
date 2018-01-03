@@ -66,7 +66,7 @@ class FrontendPDF extends \Frontend
     $pdf->Ln(10);
     
     
-    $pdf->Image($artist_image);
+   
     $pdf->Ln(10);
     $pdf->displayBasicTable('Testweise',[['01.01.2018','Neujahr'],['02.01.2018','Kein Neujahr']]);
     
