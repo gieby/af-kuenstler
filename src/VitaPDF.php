@@ -15,9 +15,9 @@ class VitaPDF extends \FPDF {
 
 	}
 
-	public function displayBasicTable($header, $data) {
+	public function displayBasicTable($header='', $data) {
 		$this->setFont('Arial','B',18);
-		$this->Cell('');
+		$this->Cell(0,10,$header,1,0,'C');
 	}
 
 	public function displayExhibitionTable() {

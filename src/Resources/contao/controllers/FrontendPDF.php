@@ -50,6 +50,7 @@ class FrontendPDF extends \Frontend
     ->log(LogLevel::INFO, 'PDF erstellt für ' . $firstname . ' ' . $lastname, array(
     'contao' => new ContaoContext(__CLASS__.'::'.__FUNCTION__, TL_GENERAL
     )));
-    return 'blar';
+    
+    return $pdf;
     }
 }
