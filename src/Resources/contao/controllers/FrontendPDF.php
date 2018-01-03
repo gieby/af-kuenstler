@@ -58,7 +58,7 @@ class FrontendPDF extends \Frontend
 
 		$returnBlock = array();
         $returnBlock['title'] = $objBlock->title;
-        $returnBlock['entries'] = deserialize($objBlocks->entries_af);
+        $returnBlock['entries'] = deserialize($objBlock->entries_af);
 
         return $returnBlock;
     }
