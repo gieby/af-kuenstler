@@ -68,7 +68,7 @@ class FrontendPDF extends \Frontend
     $artist_fname = $objKuenstler->firstname;
     $artist_lname = $objKuenstler->lastname;
     $artist_image = \FilesModel::findByUuid($objKuenstler->profile_img);    
-    $artist_blocks = $this->getBlocks($objKuenstler->id);
+    $artist_blocks = implode('',$this->getBlocks($objKuenstler->id));
 
     $pdf = new VitaPDF();
 
@@ -89,7 +89,7 @@ class FrontendPDF extends \Frontend
     }
 
     //$pdf->displayBasicTable('Testweise',[['01.01.2018','Neujahr'],['02.01.2018','Kein Neujahr']]);
-    $pdf->Write(10,print_r($artist_blocks));
+    $pdf->Write(10,$artist_blocks);
 
 
 
