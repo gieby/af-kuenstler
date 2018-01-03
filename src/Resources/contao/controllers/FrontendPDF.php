@@ -53,7 +53,7 @@ class FrontendPDF extends \Frontend
     $pdf->SetSubject('Vita für ' . $objKuenstler->firstname . ' '. $objKuenstler->firstname);
     $pdf->AddPage();
     $pdf->SetFont('Arial','B',16);
-    $pdf->Cell(40,10,'Hello World!');
+    $pdf->Cell(40,10,$objKuenstler->firstname . ' '. $objKuenstler->lastname);
     $pdf->Ln(10);
     $pdf->displayBasicTable('Testweise',['blar']);
 	$finished_pdf = $pdf->Output('S',standardize(ampersand('vita', false)) . '.pdf', 'D');
