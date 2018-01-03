@@ -100,7 +100,7 @@ class FrontendPDF extends \Frontend
 
     $pdf->AddPage();
 
-    $pdf->Image('../../public/img/vita_bg.jpg',0,0,$pdf->GetPageWidth(),$pdf->GetPageHeight());
+    $pdf->Image('http://dev.yupspace.de/files/artundform_layout/images/vita_bg.jpg',0,0,$pdf->GetPageWidth(),$pdf->GetPageHeight());
 
     $pdf->SetFont('Arial','B',14);
     $pdf->Write(10,$artist_fname . ' '. $artist_lname);
