@@ -82,7 +82,7 @@ class FrontendPDF extends \Frontend
 
     $pdf->AddPage();
     $pdf->SetFont('Arial','B',16);
-    $pdf->Write(0,$artist_fname . ' '. $artist_lname);
+    $pdf->Write(10,$artist_fname . ' '. $artist_lname);
     $pdf->Ln();
     
     if($artist_image != null) {
