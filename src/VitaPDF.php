@@ -41,6 +41,7 @@ class VitaPDF extends \FPDF {
 		$this->Ln();
 
 		foreach ($data['entries'] as $row) {
+			$this->Write(10,implode(',',$row);)
 			$this->printExhibCells($row);
 		}
 	}

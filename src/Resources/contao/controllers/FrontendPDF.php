@@ -69,7 +69,7 @@ class FrontendPDF extends \Frontend
                 'SELECT title, date FROM tl_ausstellung WHERE id="' . $exhib . '"'
             )->execute(1);
 
-            $returnBlock['entries'][] = [$objExhib->title, date('Y',$objExhib->date)];
+            $returnBlock['entries'][] = array($objExhib->title, date('Y',$objExhib->date));
         }
 
         return $returnBlock;
