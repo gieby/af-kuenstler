@@ -12,7 +12,7 @@ class VitaPDF extends \FPDF {
 	}
 
 	public function Footer() {
-		
+
 	}
 
 	/**
@@ -40,12 +40,8 @@ class VitaPDF extends \FPDF {
 		$this->setFont('');
 		$this->Ln();
 
-		$this->Write(10,implode('|',$data['entries']));
-
 		foreach ($data['entries'] as $row) {
-			$this->Write(10,implode(',',$row));
-			$this->Ln();
-			$this->printExhibCells($row['exhib_id']);
+			$this->printExhibCells($row);
 		}
 	}
 
@@ -107,9 +103,9 @@ class VitaPDF extends \FPDF {
 	/**
 	 * Die Funktion spielt in das aktuelle Ausstellungsmodul mit rein!
 	 */
-	private function printExhibCells($exhib_id) {
-		$this->Cell(35,7,'xxxx');
-		$this->Cell(0,7,'Ausstellungs-ID: ' . $exhib_id);
+	private function printExhibCells($exhib) {
+		$this->Cell(35,7,$exhib['date']);
+		$this->Cell(0,7,$exhib['title']);
 		return;
 	}
 }

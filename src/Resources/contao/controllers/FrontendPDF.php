@@ -58,7 +58,19 @@ class FrontendPDF extends \Frontend
 
 		$returnBlock = array();
         $returnBlock['title'] = $objBlock->title;
-        $returnBlock['entries'] = deserialize($objBlock->entries_af);
+        $returnBlock['entries'] = array();
+
+        $rawEntries = deserialize($objBlock->entries_af);
+
+        foreach ($rawEntries as $row) {
+            $exhib = $row['exhib_id'];
+
+            $objExhib = $this->Database->prepare(
+                'SELECT title, date FROM tl_ausstellung WHERE id="' . $exhib . '"'
+            )->execute(1);
+
+            $returnBlock['entries'][] = [$objExhib->title, date('Y',$objExhib->date)];
+        }
 
         return $returnBlock;
     }
