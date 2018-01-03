@@ -49,7 +49,7 @@ class FrontendPDF extends \Frontend
     if($artist_image == null) {
         $artist_image = 'FEHLER';
     } else {
-        $artist_image = print_r($artist_image);
+        $artist_image = $artist_image->path;
     }
 
     
