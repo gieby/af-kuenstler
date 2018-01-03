@@ -20,6 +20,7 @@ class VitaPDF extends \FPDF {
 	public function displayBasicTable($header='', $data) {
 		$this->setFont('Arial','B',12);
 		$this->Cell(0,10,$header,1,0,'C');
+		$this->Ln(10);
 		
 		foreach ($data as $row) {
 			$year = $row[0];
