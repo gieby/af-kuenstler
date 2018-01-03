@@ -23,9 +23,9 @@ class VitaPDF extends \FPDF {
 		
 		foreach ($data as $row) {
 			$this->setFont('Arial','',10);
-			$this->Cell(40,7,$row[0]);
+			$this->Cell(40,7,$row[0],'LR');
 			$this->setFont('Arial','',10);
-			$this->Cell(0,7,utf8_decode($row[5]));
+			$this->Cell(0,7,utf8_decode($row[5]),'LR');
 			$this->Ln();
 
 			$this->Write(7,utf8_decode(implode(',',$row)));
