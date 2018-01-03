@@ -16,15 +16,17 @@ class VitaPDF extends \FPDF {
 	}
 
 	public function displayBasicTable($header='', $data) {
-		$this->setFont('Arial','B',12);
-		$this->Write(10,$header);
+		$this->setFont('Arial','B',6);
+		$this->Write(8,$header);
 		$this->Ln();
+		$this->setFont('');
 		
 		foreach ($data as $row) {
 			$year = $row[0];
 			$entry = $row[1];
-			$this->Cell(40,10,$year,'LR');
-			$this->Cell(0,10,$entry,'LR');
+			$this->Cell(40,8,$year,'LR');
+			$this->Cell(0,8,$entry,'LR');
+			$this->Ln()
 		}
 	}
 
