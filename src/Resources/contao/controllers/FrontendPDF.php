@@ -33,14 +33,15 @@ class FrontendPDF extends \Frontend
      */
     private function getBlocks($artist_id) {
         $objBlocks = $this->Database->prepare(
-			'SELECT title, entries FROM tl_af_vitablock WHERE pid=' . $artist_id .' and type="entries_default"'
-		)->execute();
+			'SELECT title, entries FROM tl_af_vitablock WHERE pid=' . $artist_id .''
+        )->execute();
 
 		$returnBlocks = array();
 
 		while($objBlocks->next()) {
 			$returnBlocks[$objBlocks->title] = deserialize($objBlocks->entries);
         }
+
         return $returnBlocks;
     }
 
@@ -89,7 +90,7 @@ class FrontendPDF extends \Frontend
     }
 
     //$pdf->displayBasicTable('Testweise',[['01.01.2018','Neujahr'],['02.01.2018','Kein Neujahr']]);
-    $pdf->Write(10,$artist_blocks[0]);
+    $pdf->Write(10,);
 
 
 
@@ -101,6 +102,12 @@ class FrontendPDF extends \Frontend
     \System::getContainer()
     ->get('monolog.logger.contao')
     ->log(LogLevel::INFO, 'PDF erstellt für ' . $artist_fname . ' ' . $artist_lname, array(
+    'contao' => new ContaoContext(__CLASS__.'::'.__FUNCTION__, TL_GENERAL
+    )));
+
+    \System::getContainer()
+    ->get('monolog.logger.contao')
+    ->log(LogLevel::INFO, implode(',',$artist_blocks), array(
     'contao' => new ContaoContext(__CLASS__.'::'.__FUNCTION__, TL_GENERAL
     )));
 
