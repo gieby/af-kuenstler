@@ -23,7 +23,7 @@ class VitaPDF extends \FPDF {
 		
 		foreach ($data as $row) {
 			$this->Cell(40,7,$row->date_from,'');
-			$this->Cell(0,7,utf8_decode($row->entry_text),'');
+			$this->Cell(0,7,utf8_decode($row['entry_text']),'');
 			$this->Ln(7);
 		}
 	}
