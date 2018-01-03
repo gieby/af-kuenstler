@@ -91,6 +91,7 @@ class FrontendPDF extends \Frontend
 
     foreach ($artist_blocks as $title => $entries) {
         $pdf->displayBasicTable($title,$entries);
+        $pdf->Write(0,implode(',',$entries));
     }
 
     // fertige PDF als String zurück an den Controller schicken
