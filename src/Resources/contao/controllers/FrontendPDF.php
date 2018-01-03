@@ -60,7 +60,7 @@ class FrontendPDF extends \Frontend
     $pdf->Ln();
     
     if($artist_image != null) {
-        $pdf->Image($artist_image->path);
+        $pdf->Image($artist_image->path,null,null,50);
         $pdf->Ln(10);
     }
 
