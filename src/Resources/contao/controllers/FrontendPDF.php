@@ -60,6 +60,12 @@ class FrontendPDF extends \Frontend
     $pdf->SetFont('Arial','B',16);
     $pdf->Cell(40,10,$artist_fname . ' '. $artist_lname);
     $pdf->Ln(10);
+    
+    
+    $pdf->Cell(40,10,$artist_image);
+    $pdf->Ln(10);
+    
+    
     $pdf->Image($artist_image);
     $pdf->Ln(10);
     $pdf->displayBasicTable('Testweise',[['01.01.2018','Neujahr'],['02.01.2018','Kein Neujahr']]);
