@@ -33,13 +33,24 @@ class FrontendPDF extends \Frontend
      */
     public function getPDF($lastname, $firstname) {
 
+
+    /**
+     * Die Daten für den angefragten Künstler aus der Datenbank holen
+     */
+
+    $objKuenstler = $this->Database->prepare(
+        'SELECT firstname, lastname, profile_img FROM tl_af_kuenstler ORDER BY lastname'
+      )->execute(1);
+
+    
+
     $pdf = new VitaPDF();
 
     //
     $pdf->SetCreator('art+form');
     $pdf->SetAuthor('art+form');
-    $pdf->SetTitle($firstname . ' '. $lastname . ' - Vita');
-    $pdf->SetSubject('Vita für ' . $firstname . ' '. $lastname);
+    $pdf->SetTitle($objKuenstler->firstname . ' '. $objKuenstler->lastname . ' - Vita');
+    $pdf->SetSubject('Vita für ' . $objKuenstler->firstname . ' '. $objKuenstler->firstname);
     $pdf->AddPage();
     $pdf->SetFont('Arial','B',16);
     $pdf->Cell(40,10,'Hello World!');
@@ -49,7 +60,7 @@ class FrontendPDF extends \Frontend
 
     \System::getContainer()
     ->get('monolog.logger.contao')
-    ->log(LogLevel::INFO, 'PDF erstellt für ' . $firstname . ' ' . $lastname, array(
+    ->log(LogLevel::INFO, 'PDF erstellt für ' . $objKuenstler->firstname . ' ' . $objKuenstler->firstname, array(
     'contao' => new ContaoContext(__CLASS__.'::'.__FUNCTION__, TL_GENERAL
     )));
 
