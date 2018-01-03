@@ -33,7 +33,7 @@ class FrontendPDF extends \Frontend
      */
     private function getBlocks($artist_id) {
         $objBlocks = $this->Database->prepare(
-			'SELECT title, entries FROM tl_af_vitablock WHERE pid=' . $artist_id .''
+			'SELECT title, entries FROM tl_af_vitablock WHERE pid=' . $artist_id .' AND type="entries_default"'
         )->execute();
 
 		$returnBlocks = array();
