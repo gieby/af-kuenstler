@@ -22,5 +22,7 @@ class PDFController extends Controller {
 
 		$response = new Response($data);
 		$response->headers->set('Content-Type', 'application/pdf');
+
+		return $response;
 	}
 }
