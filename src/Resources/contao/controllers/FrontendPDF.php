@@ -58,12 +58,11 @@ class FrontendPDF extends \Frontend
 
     $pdf->AddPage();
     $pdf->SetFont('Arial','B',16);
-    $pdf->Cell(40,10,$artist_fname . ' '. $artist_lname);
-    $pdf->Ln(10);
+    $pdf->Write(10,$artist_fname . ' '. $artist_lname);
+    $pdf->Ln();
     
     
-    $pdf->Cell(40,10,$artist_image);
-    $pdf->Ln(10);
+    $pdf->Write(10,$artist_image);
     
     
    
