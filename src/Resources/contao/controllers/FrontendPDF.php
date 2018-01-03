@@ -47,7 +47,7 @@ class FrontendPDF extends \Frontend
 
     \System::getContainer()
     ->get('monolog.logger.contao')
-    ->log(LogLevel::INFO, 'PDF erstellt für' . $firstname . ' ' . $lastname, array(
+    ->log(LogLevel::INFO, 'PDF erstellt für ' . $firstname . ' ' . $lastname, array(
     'contao' => new ContaoContext(__CLASS__.'::'.__FUNCTION__, TL_GENERAL
     )));
     return 'blar';

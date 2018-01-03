@@ -19,5 +19,7 @@ class PDFController extends Controller {
 		$controller = new \yupdesign\AF\FrontendPDF();
 		
 		$data = $controller->getPDF($lastname,$firstname);
+
+		return '';
 	}
 }
