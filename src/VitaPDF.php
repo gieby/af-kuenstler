@@ -40,7 +40,7 @@ class VitaPDF extends \FPDF {
 		$this->setFont('');
 		$this->Ln();
 
-		$this->Write(10,implode('|',$data['entries']))
+		$this->Write(10,implode('|',$data['entries']));
 
 		foreach ($data['entries'] as $row) {
 			$this->Write(10,implode(',',$row));
