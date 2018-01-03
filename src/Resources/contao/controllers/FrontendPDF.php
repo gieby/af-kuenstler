@@ -40,17 +40,10 @@ class FrontendPDF extends \Frontend
     $pdf->SetAuthor('art+form');
     $pdf->SetTitle($firstname . ' '. $lastname . ' - Vita');
     $pdf->SetSubject('Vita für ' . $firstname . ' '. $lastname);
-    $pdf->SetKeywords('');
-    $pdf->setFontSubsetting(false);
     $pdf->AddPage();
-    $pdf->lastPage();
+    $pdf->SetFont('Arial','B',16);
+    $pdf->Cell(40,10,'Hello World!');
+    $pdf->Output();
 	$pdf->Output(standardize(ampersand('vita', false)) . '.pdf', 'D');
-
-    \System::getContainer()
-    ->get('monolog.logger.contao')
-    ->log(LogLevel::INFO, 'PDF erstellt für' . $firstname . ' ' . $lastname, array(
-    'contao' => new ContaoContext(__CLASS__.'::'.__FUNCTION__, TL_GENERAL
-    )));
-    return 'blar';
     }
 }
