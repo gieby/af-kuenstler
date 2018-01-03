@@ -6,6 +6,7 @@ use Psr\Log\LogLevel;
 use Contao\CoreBundle\Monolog\ContaoContext;
 use yupdesign\AFKuenstler\VitaPDF;
 use yupdesign\AFKuenstler\VitaBlock;
+use \setasign\Fpdi;
 
 class FrontendPDF extends \Frontend
 {
@@ -99,8 +100,10 @@ class FrontendPDF extends \Frontend
     $pdf->SetMargins(21.1,13.5,13.5);
 
     $pdf->AddPage();
+    $pdf->setSourceFile('../../config/vita_vorlage.pdf');
+    $tplId = $pdf->importPage(1);
+    $pdf->useTemplate($tplId, 0, 0, 210);
 
-    $pdf->Image('http://dev.yupspace.de/files/artundform_layout/images/vita_bg.jpg',0,0,$pdf->GetPageWidth(),$pdf->GetPageHeight());
 
     $pdf->SetFont('Arial','B',14);
     $pdf->Write(10,$artist_fname . ' '. $artist_lname);
