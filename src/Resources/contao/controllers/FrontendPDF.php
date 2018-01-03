@@ -43,14 +43,14 @@ class FrontendPDF extends \Frontend
     $pdf->AddPage();
     $pdf->SetFont('Arial','B',16);
     $pdf->Cell(40,10,'Hello World!');
-	$pdf->Output(standardize(ampersand('vita', false)) . '.pdf', 'D');
+	$pdf->Output('I',standardize(ampersand('vita', false)) . '.pdf', 'D');
 
     \System::getContainer()
     ->get('monolog.logger.contao')
     ->log(LogLevel::INFO, 'PDF erstellt für ' . $firstname . ' ' . $lastname, array(
     'contao' => new ContaoContext(__CLASS__.'::'.__FUNCTION__, TL_GENERAL
     )));
-    
+
     return $pdf;
     }
 }
