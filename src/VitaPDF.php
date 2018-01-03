@@ -23,7 +23,7 @@ class VitaPDF extends \FPDF {
 		
 		foreach ($data as $row) {
 			$year = $row[0];
-			$entry = $row[1];
+			$entry = $row[5];
 			$this->Cell(40,7,$year);
 			$this->Cell(0,7,utf8_decode($entry));
 			$this->Ln();
