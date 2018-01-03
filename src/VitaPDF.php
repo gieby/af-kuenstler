@@ -15,11 +15,12 @@ class VitaPDF extends \FPDF {
 
 	}
 
-	public function displayBasicTable() {
-
+	public function displayBasicTable($header, $data) {
+		$this->setFont('Arial','B',18);
+		$this->Cell('');
 	}
 
 	public function displayExhibitionTable() {
-		
+
 	}
 }
