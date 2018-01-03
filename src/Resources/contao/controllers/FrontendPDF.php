@@ -27,6 +27,27 @@ class FrontendPDF extends \Frontend
         }
     }
 
+
+    /**
+     * 
+     */
+    private function getBlocks($artist_id) {
+        $objBlocks = $this->Database->prepare(
+			'SELECT title, entries FROM tl_af_vitablock WHERE pid=' . $artist_id .' and type="entries_default"'
+		)->execute();
+
+		$returnBlocks = array();
+
+		while($objBlocks->next()) {
+			$returnBlocks[$objBlocks->title] = deserialize($objBlocks->entries);
+        }
+        return $returnBlocks;
+    }
+
+
+
+
+
     /**
      * Run the controller
      *
@@ -43,12 +64,11 @@ class FrontendPDF extends \Frontend
         'SELECT id,firstname, lastname, profile_img FROM tl_af_kuenstler ORDER BY lastname'
       )->execute(1);
 
-    $vitaBlock = new VitaBlock();
-    $artist_blocks = $vitaBlock->getBlocks($objKuenstler->id);
 
     $artist_fname = $objKuenstler->firstname;
     $artist_lname = $objKuenstler->lastname;
     $artist_image = \FilesModel::findByUuid($objKuenstler->profile_img);    
+    $artist_blocks = $this->getBlocks($objKuenstler->id);
 
     $pdf = new VitaPDF();
 
