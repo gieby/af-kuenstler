@@ -90,7 +90,7 @@ class FrontendPDF extends \Frontend
     }
 
     //$pdf->displayBasicTable('Testweise',[['01.01.2018','Neujahr'],['02.01.2018','Kein Neujahr']]);
-    $pdf->Write(10,);
+    $pdf->Write(10,$artist_blocks);
 
 
 
