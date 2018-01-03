@@ -41,7 +41,6 @@ class VitaPDF extends \FPDF {
 		$this->Ln();
 
 		foreach ($data['entries'] as $row) {
-			$this->Write(10,implode(',',$row));
 			$this->printExhibCells($row);
 		}
 	}
@@ -105,8 +104,8 @@ class VitaPDF extends \FPDF {
 	 * Die Funktion spielt in das aktuelle Ausstellungsmodul mit rein!
 	 */
 	private function printExhibCells($exhib) {
-		$this->Cell(35,7,$exhib['date']);
-		$this->Cell(0,7,$exhib['title']);
+		$this->Cell(35,7,$exhib[1]);
+		$this->Cell(0,7,$exhib[0]);
 		return;
 	}
 }
