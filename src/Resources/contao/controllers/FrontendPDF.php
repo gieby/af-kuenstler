@@ -44,7 +44,7 @@ class FrontendPDF extends \Frontend
 
     $artist_fname = $objKuenstler->firstname;
     $artist_lname = $objKuenstler->lastname;
-    $artist_image = \FilesModel::findByUuid($this->profile_img)->$path;
+    $artist_image = \FilesModel::findByUuid($objKuenstler->profile_img)->$path;
 
     
 
