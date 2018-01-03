@@ -22,13 +22,10 @@ class VitaPDF extends \FPDF {
 		$this->Ln();
 		
 		foreach ($data as $row) {
-			$year = $row[0];
-			$entry = $row[5];
-			
 			$this->setFont('Arial','',10);
-			$this->Cell(40,7,$year);
+			$this->Cell(40,7,$row[0]);
 			$this->setFont('Arial','',10);
-			$this->Cell(0,7,utf8_decode($entry));
+			$this->Cell(0,7,utf8_decode($row[5]));
 			$this->Ln();
 
 			$this->Write(7,utf8_decode(implode(',',$row)));
