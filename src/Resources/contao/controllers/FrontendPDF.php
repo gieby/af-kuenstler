@@ -100,10 +100,6 @@ class FrontendPDF extends \Frontend
     $pdf->SetMargins(21.1,13.5,13.5);
 
     $pdf->AddPage();
-    $pdf->setSourceFile('../../config/vita_vorlage.pdf');
-    $tplId = $pdf->importPage(1);
-    $pdf->useTemplate($tplId, 0, 0, 210);
-
 
     $pdf->SetFont('Arial','B',14);
     $pdf->Write(10,$artist_fname . ' '. $artist_lname);
