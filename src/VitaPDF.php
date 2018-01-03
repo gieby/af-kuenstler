@@ -22,8 +22,8 @@ class VitaPDF extends \FPDF {
 		$this->Ln();
 		
 		foreach ($data as $row) {
-			$this->Cell(40,7,$row,'');
-			$this->Cell(0,7,utf8_decode($row),'');
+			$this->Cell(40,7,$row->date_from,'');
+			$this->Cell(0,7,utf8_decode($row->entry_text),'');
 			$this->Ln(7);
 		}
 	}
