@@ -78,11 +78,11 @@ class VitaPDF extends \FPDF {
 		}
 
 		if($to - $from == 1) {
-			$this->Cell(35,7,$from . '/' . $to);
+			$this->Cell(35,7,$from . ' / ' . $to);
 			return;
 		}
 
-		$this->Cell(35,7,$from . '-' . $to);
+		$this->Cell(35,7,$from . ' - ' . $to);
 		return;
 	}
 }
