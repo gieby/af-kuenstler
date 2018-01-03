@@ -5,6 +5,7 @@ namespace yupdesign\AF;
 use Psr\Log\LogLevel;
 use Contao\CoreBundle\Monolog\ContaoContext;
 use yupdesign\AFKuenstler\VitaPDF;
+use yupdesign\AFKuenstler\VitaBlock;
 
 class FrontendPDF extends \Frontend
 {
@@ -39,8 +40,11 @@ class FrontendPDF extends \Frontend
      */
 
     $objKuenstler = $this->Database->prepare(
-        'SELECT firstname, lastname, profile_img FROM tl_af_kuenstler ORDER BY lastname'
+        'SELECT id,firstname, lastname, profile_img FROM tl_af_kuenstler ORDER BY lastname'
       )->execute(1);
+
+    $vitaBlock = new VitaBlock();
+    $artist_blocks = $vitaBlock->getBlocks($objKuenstler->id);
 
     $artist_fname = $objKuenstler->firstname;
     $artist_lname = $objKuenstler->lastname;
@@ -64,8 +68,11 @@ class FrontendPDF extends \Frontend
         $pdf->Ln(10);
     }
 
-    $pdf->displayBasicTable('Testweise',[['01.01.2018','Neujahr'],['02.01.2018','Kein Neujahr']]);
-    
+    //$pdf->displayBasicTable('Testweise',[['01.01.2018','Neujahr'],['02.01.2018','Kein Neujahr']]);
+    $pdf->Write(10,print_r($artist_blocks));
+
+
+
     // fertige PDF als String zurück an den Controller schicken
     $finished_pdf = $pdf->Output('S',standardize(ampersand('vita', false)) . '.pdf', 'D');
 
