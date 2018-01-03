@@ -20,6 +20,6 @@ class PDFController extends Controller {
 		
 		$data = $controller->getPDF($lastname,$firstname);
 
-		return $data;
+		return new Response($data);
 	}
 }
