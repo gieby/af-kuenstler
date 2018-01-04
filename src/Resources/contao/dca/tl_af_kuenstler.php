@@ -108,11 +108,7 @@ $GLOBALS['TL_DCA']['tl_af_kuenstler'] = array
 			'inputTyoe'	=> 'text',
 			'exclude'                 => true, 
 			'inputType'               => 'text', 
-			'eval'                    => array('rgxp'=>'alias', 'doNotCopy'=>true, 'maxlength'=>128, 'tl_class'=>'w50'), 
-			'save_callback' => array 
-			( 
-					array('tl_af_kuenstler_helper', 'generateAlias') 
-			), 
+			'eval'                    => array('rgxp'=>'alias', 'doNotCopy'=>true, 'maxlength'=>128, 'tl_class'=>'w50'),
 			'sql'                     => "varbinary(128) NOT NULL default ''" 
 		),
 		'homepage'	=> array
@@ -138,42 +134,3 @@ $GLOBALS['TL_DCA']['tl_af_kuenstler'] = array
 		),
 	)
 );
-
-class tl_af_kuenstler_helper extends \Backend {
-	/**
-	 * Import the back end user object
-	 */
-	public function __construct()
-	{
-		parent::__construct();
-		$this->import('BackendUser', 'User');
-	}
-
-	public function generateAlias($varValue, DataContainer $dc) 
-    { 
-        $autoAlias = false; 
-
-        // Generate an alias if there is none 
-        if ($varValue == '') 
-        { 
-            $autoAlias = true; 
-            $varValue = standardize(String::restoreBasicEntities($dc->activeRecord->title)); 
-        } 
-
-        $objAlias = $this->Database->prepare("SELECT id FROM tl_af_kuenstler WHERE id=? OR alias=?") 
-                                   ->execute($dc->id, $varValue); 
-
-        // Check whether the page alias exists 
-        if ($objAlias->numRows > 1) 
-        { 
-            if (!$autoAlias) 
-            { 
-                throw new Exception(sprintf($GLOBALS['TL_LANG']['ERR']['aliasExists'], $varValue)); 
-            } 
-
-            $varValue .= '-' . $dc->id; 
-        } 
-
-        return $varValue; 
-    }  
-}

@@ -14,3 +14,5 @@ $GLOBALS['TL_LANG']['tl_af_kuenstler']['homepage'][0] = 'Webseite';
 $GLOBALS['TL_LANG']['tl_af_kuenstler']['homepage'][1] = 'Pfad zur Webseite';
 $GLOBALS['TL_LANG']['tl_af_kuenstler']['profile_img'][0] = 'Bild';
 $GLOBALS['TL_LANG']['tl_af_kuenstler']['profile_copyright'][0] = 'Bildnachweis';
+$GLOBALS['TL_LANG']['tl_af_kuenstler']['alias'][0] = 'Alias';
+$GLOBALS['TL_LANG']['tl_af_kuenstler']['debug_legend'] = 'debug';
