@@ -113,7 +113,7 @@ class FrontendPDF extends \Frontend
 
     $pdf->AddPage();
 
-    $pdf->SetX(10);
+    $pdf->SetY(10);
     $pdf->SetFont('Arial','B',14);
     $pdf->Write(10,$artist_fname . ' '. $artist_lname);
     $pdf->Ln();
