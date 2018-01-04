@@ -12,9 +12,9 @@ class VitaPDF extends \FPDF {
 	}
 
 	public function Footer() {
+		$this->SetY(-15);
 		$this->SetFillColor(125);
 		$this->Rect(21.1,-15,35,10,'F');
-		$this->SetX($this->GetX() + 5);
 		$this->Rect(26.1,-15,0,10,'F');
 	}
 
