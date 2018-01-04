@@ -92,7 +92,7 @@ class FrontendPDF extends \Frontend
      */
 
     $objKuenstler = $this->Database->prepare(
-        'SELECT id,firstname, lastname, profile_img FROM tl_af_kuenstler ORDER BY lastname'
+        'SELECT id,firstname, lastname, profile_img FROM tl_af_kuenstler WHERE firstname="'.ucfirst($firstname).'" AND lastname="'.ucfirst($lastname).'" ORDER BY lastname'
       )->execute(1);
 
 
