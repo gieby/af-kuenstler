@@ -4,12 +4,11 @@ namespace yupdesign\AFKuenstler;
 
 class VitaPDF extends \FPDF {
 
-	$widths = array(
+	const $widths = array(
 		'left'		=> 35,
 		'gutter'	=>  5,
 		'main'		=> 0
 	)
-
 	/**
 	 * @todo: ggf. werden Header und Footer durch ein Template ersetzt!
 	 */
