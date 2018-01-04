@@ -109,7 +109,7 @@ class FrontendPDF extends \Frontend
     $pdf->SetAuthor('art+form');
     $pdf->SetTitle($artist_fname . ' '. $artist_lname . ' - Vita');
     $pdf->SetSubject('Vita für ' . $artist_fname . ' '. $artist_lname);
-    $pdf->SetMargins(21.1,13.5,13.5);
+    $pdf->SetMargins(21,14,14);
 
     $pdf->AddPage();
 
