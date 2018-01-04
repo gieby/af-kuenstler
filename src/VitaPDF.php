@@ -27,7 +27,7 @@ class VitaPDF extends \FPDF {
 	public function displayBasicTable($header='',$data) {
 		$this->SetY($this->GetY() + 5);
 		$this->setFont('Arial','B',10);
-		$this->Write(10,$header);
+		$this->Write(10,utf8_decode($header));
 		$this->setFont('');
 		$this->Ln();
 		
@@ -44,7 +44,7 @@ class VitaPDF extends \FPDF {
 	public function displayExhibitionsTable($data) {
 		$this->SetY($this->GetY() + 5);
 		$this->setFont('Arial','B',10);
-		$this->Write(10,$data['title']);
+		$this->Write(10,utf8_decode($data['title']));
 		$this->setFont('');
 		$this->Ln();
 
@@ -100,6 +100,11 @@ class VitaPDF extends \FPDF {
 
 		if($to - $from == 1) {
 			$this->Cell(35,7,$from . ' / ' . $to);
+			return;
+		}
+
+		if($to == '' && $from == '') {
+			$this->Cell(35,7,'');
 			return;
 		}
 
