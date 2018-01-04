@@ -9,7 +9,7 @@ class VitaPDF extends \FPDF {
 	 */
 	public function Header() {
 		$this->SetY(14);
-		$this->SetFillCollor(200);
+		$this->SetFillColor(200);
 		$this->Rect(154,$this->GetY(),35,10,'F');
 	}
 
