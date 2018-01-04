@@ -114,8 +114,7 @@ $GLOBALS['TL_DCA']['tl_af_kuenstler'] = array
 					array('tl_af_kuenstler', 'generateAlias') 
 			), 
 			'sql'                     => "varbinary(128) NOT NULL default ''" 
-
-		)
+		),
 		'homepage'	=> array
 		(
 			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['homepage'],
