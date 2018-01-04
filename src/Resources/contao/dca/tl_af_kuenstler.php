@@ -139,7 +139,7 @@ $GLOBALS['TL_DCA']['tl_af_kuenstler'] = array
 	)
 );
 
-class tl_af_kuenstler extends Backend {
+class tl_af_kuenstler extends \Backend {
 	/**
 	 * Import the back end user object
 	 */
