@@ -111,7 +111,7 @@ $GLOBALS['TL_DCA']['tl_af_kuenstler'] = array
 			'eval'                    => array('rgxp'=>'alias', 'doNotCopy'=>true, 'maxlength'=>128, 'tl_class'=>'w50'), 
 			'save_callback' => array 
 			( 
-					array('tl_af_kuenstler', 'generateAlias') 
+					array('tl_af_kuenstler_helper', 'generateAlias') 
 			), 
 			'sql'                     => "varbinary(128) NOT NULL default ''" 
 		),
@@ -139,7 +139,7 @@ $GLOBALS['TL_DCA']['tl_af_kuenstler'] = array
 	)
 );
 
-class tl_af_kuenstler extends \Backend {
+class tl_af_kuenstler_helper extends \Backend {
 	/**
 	 * Import the back end user object
 	 */
