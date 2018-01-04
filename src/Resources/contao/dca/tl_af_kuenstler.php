@@ -70,7 +70,7 @@ $GLOBALS['TL_DCA']['tl_af_kuenstler'] = array
 
 	'palettes'	=> array
 	(
-		'default'	=> 'firstname, lastname, homepage;profile_img,profile_copyright'
+		'default'	=> 'firstname, lastname, homepage;profile_img,profile_copyright;{debug_legend:hidden},alias'
 	),
 
 
@@ -102,6 +102,20 @@ $GLOBALS['TL_DCA']['tl_af_kuenstler'] = array
 			'filter'		=> true,
 			'sql'				=> "varchar(128) NOT NULL default ''"
 		),
+		'alias' =>
+		(
+			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['alias'],
+			'inputTyoe'	=> 'text',
+			'exclude'                 => true, 
+			'inputType'               => 'text', 
+			'eval'                    => array('rgxp'=>'alias', 'doNotCopy'=>true, 'maxlength'=>128, 'tl_class'=>'w50'), 
+			'save_callback' => array 
+			( 
+					array('tl_af_kuenstler', 'generateAlias') 
+			), 
+			'sql'                     => "varbinary(128) NOT NULL default ''" 
+
+		)
 		'homepage'	=> array
 		(
 			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['homepage'],
@@ -124,4 +138,43 @@ $GLOBALS['TL_DCA']['tl_af_kuenstler'] = array
 			'sql'				=> "varchar(128) NOT NULL default ''"
 		),
 	)
-	);
+);
+
+class tl_af_kuenstler extends Backend {
+	/**
+	 * Import the back end user object
+	 */
+	public function __construct()
+	{
+		parent::__construct();
+		$this->import('BackendUser', 'User');
+	}
+
+	public function generateAlias($varValue, DataContainer $dc) 
+    { 
+        $autoAlias = false; 
+
+        // Generate an alias if there is none 
+        if ($varValue == '') 
+        { 
+            $autoAlias = true; 
+            $varValue = standardize(String::restoreBasicEntities($dc->activeRecord->title)); 
+        } 
+
+        $objAlias = $this->Database->prepare("SELECT id FROM tl_af_kuenstler WHERE id=? OR alias=?") 
+                                   ->execute($dc->id, $varValue); 
+
+        // Check whether the page alias exists 
+        if ($objAlias->numRows > 1) 
+        { 
+            if (!$autoAlias) 
+            { 
+                throw new Exception(sprintf($GLOBALS['TL_LANG']['ERR']['aliasExists'], $varValue)); 
+            } 
+
+            $varValue .= '-' . $dc->id; 
+        } 
+
+        return $varValue; 
+    }  
+}
