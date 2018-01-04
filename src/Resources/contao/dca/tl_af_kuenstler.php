@@ -102,7 +102,7 @@ $GLOBALS['TL_DCA']['tl_af_kuenstler'] = array
 			'filter'		=> true,
 			'sql'				=> "varchar(128) NOT NULL default ''"
 		),
-		'alias' =>
+		'alias' => array
 		(
 			'label'			=> &$GLOBALS['TL_LANG']['tl_af_kuenstler']['alias'],
 			'inputTyoe'	=> 'text',
