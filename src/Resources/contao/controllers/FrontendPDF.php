@@ -109,16 +109,16 @@ class FrontendPDF extends \Frontend
     $pdf->SetAuthor('art+form');
     $pdf->SetTitle($artist_fname . ' '. $artist_lname . ' - Vita');
     $pdf->SetSubject('Vita für ' . $artist_fname . ' '. $artist_lname);
-    $pdf->SetMargins(21,14,14);
+    $pdf->SetMargins(20,35,11);
 
     $pdf->AddPage();
 
+    $pdf->SetX(10);
     $pdf->SetFont('Arial','B',14);
     $pdf->Write(10,$artist_fname . ' '. $artist_lname);
     $pdf->Ln();
     
     if($artist_image != null) {
-        $pdf->Write(5,$artist_image->path);
         $pdf->Image($artist_image->path,null,null,50);
         $pdf->Ln(10);
     }

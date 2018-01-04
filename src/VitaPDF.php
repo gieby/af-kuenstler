@@ -8,15 +8,15 @@ class VitaPDF extends \FPDF {
 	 * @todo: ggf. werden Header und Footer durch ein Template ersetzt!
 	 */
 	public function Header() {
-		$this->SetY(14);
+		$this->SetY(10);
 		$this->SetFillColor(200);
 		$this->Rect(154,$this->GetY(),35,10,'F');
 	}
 
 	public function Footer() {
-		$this->SetY(-15);
+		$this->SetY(-20);
 		$this->SetFillColor(200);
-		$this->Rect(21,$this->GetY(),30,10,'F');
+		$this->Rect(20,$this->GetY(),30,10,'F');
 		$this->Rect(56,$this->GetY(),140,10,'F');
 	}
 
