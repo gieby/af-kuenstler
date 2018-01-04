@@ -14,8 +14,8 @@ class VitaPDF extends \FPDF {
 		$this->SetY(-15);
 		$this->SetX(21);
 		$this->SetFillColor(200);
-		$this->Rect($this->GetX(),$this->GetY(),35,10,'F');
-		$this->Rect($this->GetX()+5,$this->GetY(),175,10,'F');
+		$this->Rect(21,$this->GetY(),35,10,'F');
+		$this->Rect(40,$this->GetY(),175,10,'F');
 	}
 
 	/**
