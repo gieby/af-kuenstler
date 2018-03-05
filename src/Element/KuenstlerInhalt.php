@@ -48,8 +48,9 @@ class KuenstlerInhalt extends \ContentElement
         $block['title'] = $objKuenstler->title;
         $block['type'] = ($objKuenstler->entries_af == null) ? 'default' : 'af';
         if($block['type'] == 'default') {
-          $block['entries'] = deserialize($objKuenstler->entries);
-          $block['dropFirstColumn'] = $this->canFirstColumBeDropped($block['entries']);
+          $entries = deserialize($objKuenstler->entries);
+          $block['dropFirstColumn'] = $this->canFirstColumBeDropped($entries);
+          $block['entries'] = $this->formatEntries($entries);
         } else {
           $block['entries'] = deserialize($objKuenstler->entries_af);
         }
@@ -75,5 +76,36 @@ class KuenstlerInhalt extends \ContentElement
      }
 
      return true;
+   }
+
+   function formatEntries($block) {
+     $arrReturn = array();
+     foreach ($block as $entry) {
+        $data = (
+          'date' => $this->formatDate($entry['date_from'],$entry['date_to']),
+          'text' => $entry['entry_text']
+        )
+        $arrReturn[] = $data;
+     }
+    return $arrReturn;
+   }
+
+   function formatDate($date_from,$date_to) {
+      $text = 'FEHLER';  
+      if($date_from != '' && $date_from != '...') {
+        if($date_to == '') {
+          $text = $date_from;
+        } elseif ($date_to == '...') {
+          $text = 'seit&nbsp;'.$date_from;
+        } else {
+          $text = $date_from . '&nbsp;-&nbsp;' . $date_to;
+        }
+      } elseif ($date_from != '' && $date_from == '...') {
+        if($date_to != '') {
+          $text = 'bis&nbsp;'.$date_to;
+        }
+      }
+
+      return $text;
    }
 }
