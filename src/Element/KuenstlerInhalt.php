@@ -44,13 +44,25 @@ class KuenstlerInhalt extends \ContentElement
        */
 
        return;
+    } else {
+      $blocks = new Array();
     }
 
     while ($objKuenstler->next()) {
         /**
          * Ergebnisse... handle me!
          */
+
+         $block = new Array();
+         $block['title'] = $objKuenstler->title;
+         $block['entries'] = $objKuenstler->entries;
+         $block['entries_af'] = $objKuenstler->entries_af;
+
+        $blocks[] = $block;
+
     }
+
+    $this->Template->blocks = $blocks;
 
   }
 
