@@ -85,7 +85,7 @@ class KuenstlerInhalt extends \ContentElement
           'date' => $this->formatDate($entry['date_from'],$entry['date_to']),
           'text' => $entry['entry_text']
         );
-        
+
         $arrReturn[] = $data;
      }
 
@@ -106,6 +106,8 @@ class KuenstlerInhalt extends \ContentElement
         if($date_to != '') {
           $text = 'bis&nbsp;'.$date_to;
         }
+      } elseif ($date_from == '' && $date_to == '') {
+        $text = '';
       }
 
       return $text;
