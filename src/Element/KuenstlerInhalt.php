@@ -62,6 +62,7 @@ class KuenstlerInhalt extends \ContentElement
 
     }
 
+    $this->Template->blubb = 'blar';
     $this->Template->blocks = $blocks;
 
   }
