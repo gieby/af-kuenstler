@@ -48,8 +48,8 @@ class KuenstlerInhalt extends \ContentElement
         $block['title'] = $objKuenstler->title;
         $block['type'] = ($objKuenstler->entries_af == null) ? 'default' : 'af';
         if($block['type'] == 'default') {
-          $block['dropFirstColumn'] = $this->canFirstColumBeDropped($objKuenstler->entries);
           $block['entries'] = deserialize($objKuenstler->entries);
+          $block['dropFirstColumn'] = $this->canFirstColumBeDropped($block['entries']);
         } else {
           $block['entries'] = deserialize($objKuenstler->entries_af);
         }
