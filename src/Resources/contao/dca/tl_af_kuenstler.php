@@ -53,7 +53,7 @@ $GLOBALS['TL_DCA']['tl_af_kuenstler'] = array
 			),
 			'edit_blocks' => array
 			(
-			 'label'               => &$GLOBALS['TL_LANG']['tl_cuaprojects']['edit_blocks'],
+			 'label'               => &$GLOBALS['TL_LANG']['tl_af_kuenstler']['edit_blocks'],
 			 'href'                => 'table=tl_af_vitablock',
 			 'icon'                => 'article.gif'
 			),
