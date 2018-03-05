@@ -45,14 +45,13 @@ class KuenstlerInhalt extends \ContentElement
 
          $block = array();
          $block['title'] = $objKuenstler->title;
-         $block['entries'] = $objKuenstler->entries;
-         $block['entries_af'] = $objKuenstler->entries_af;
+         $block['entries'] = deserialize($objKuenstler->entries);
+         $block['entries_af'] = deserialize($objKuenstler->entries_af);
 
         $blocks[] = $block;
 
     }
-
-    $this->Template->blubb = 'blar';
+    
     $this->Template->blocks = $blocks;
 
   }
