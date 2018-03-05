@@ -52,8 +52,6 @@ class KuenstlerInhalt extends \ContentElement
          */
     }
 
-    $this->Template
-
   }
 
   /**
