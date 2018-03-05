@@ -1,6 +1,7 @@
 <div id="kuenstler-inhalt">
-		<?php for($block in $this->blocks): ?>
+		<?php foreach($this->blocks as $block): ?>
 			<?php print_r($block); ?>
-		<?php endfor; ?>
+		<?php endforeach; ?>
+		
 		<?php $this->showTemplateVars(); ?>
 </div>
