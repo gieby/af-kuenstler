@@ -35,18 +35,8 @@ class KuenstlerInhalt extends \ContentElement
   protected function compile()
   {
     $objKuenstler = $this->Database->prepare(
-      'SELECT title, entries, entries_af FROM tl_af_vitablock WHERE id=?'
+      'SELECT title, entries, entries_af FROM tl_af_vitablock WHERE pid=?'
     )->execute(6);
-
-    if($objKuenstler->numRows < 1) {
-      /**
-       * keine Ergebnisse... handle this shit!
-       */
-
-       return;
-    } else {
-      $blocks = array();
-    }
 
     while ($objKuenstler->next()) {
         /**
