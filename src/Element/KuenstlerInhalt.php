@@ -81,9 +81,9 @@ class KuenstlerInhalt extends \ContentElement
    function formatEntries($block) {
      $arrReturn = array();
      foreach ($block as $entry) {
-        $data = (
-          'date' = $this->formatDate($entry['date_from'],$entry['date_to']),
-          'text' = $entry['entry_text']
+        $data = array(
+          'date' => $this->formatDate($entry['date_from'],$entry['date_to']),
+          'text' => $entry['entry_text']
         )
         $arrReturn[] = $data;
      }
