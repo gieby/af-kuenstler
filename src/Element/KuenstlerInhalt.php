@@ -43,15 +43,22 @@ class KuenstlerInhalt extends \ContentElement
          * Ergebnisse... handle me!
          */
 
-         $block = array();
-         $block['title'] = $objKuenstler->title;
-         $block['entries'] = deserialize($objKuenstler->entries);
-         $block['entries_af'] = deserialize($objKuenstler->entries_af);
+        $block = array();
+
+        $block['title'] = $objKuenstler->title;
+        $block['type'] = ($objKuenstler->entries_af == null) ? 'default' : 'af';
+        if($block['type'] == 'default') {
+          $block['dropFirstColumn'] = canFirstColumBeDropped($objKuenstler->entries);
+          $block['entries'] = deserialize($objKuenstler->entries);
+        } else {
+          $block['entries'] = deserialize($objKuenstler->entries_af);
+        }
+
 
         $blocks[] = $block;
 
     }
-    
+
     $this->Template->blocks = $blocks;
 
   }
@@ -59,4 +66,14 @@ class KuenstlerInhalt extends \ContentElement
   /**
    * Weitere Helferfunktionen, die für die Liste relevant sind.
    */
+
+   function canFirstColumBeDropped($block) {
+     foreach ($block as $entries) {
+       if($entries['date_from'] != '' || $entries['date_to'] != '') {
+         return false;
+       }
+     }
+
+     return true;
+   }
 }
