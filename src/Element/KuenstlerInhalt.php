@@ -45,7 +45,7 @@ class KuenstlerInhalt extends \ContentElement
 
        return;
     } else {
-      $blocks = new Array();
+      $blocks = array();
     }
 
     while ($objKuenstler->next()) {
@@ -53,7 +53,7 @@ class KuenstlerInhalt extends \ContentElement
          * Ergebnisse... handle me!
          */
 
-         $block = new Array();
+         $block = array();
          $block['title'] = $objKuenstler->title;
          $block['entries'] = $objKuenstler->entries;
          $block['entries_af'] = $objKuenstler->entries_af;
