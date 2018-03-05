@@ -1,16 +1,16 @@
 <div id="kuenstler-inhalt">
 		<?php foreach($this->blocks as $block): ?>
-			<h2><?= $block->title; ?></h2>
+			<h2><?= $block['title']; ?></h2>
 			<table>
-				<?php foreach($block->entries as $entry): ?>
-					<?php if($entry->dropFirstColumn): ?>
+				<?php foreach($block['entries'] as $entry): ?>
+					<?php if($entry['dropFirstColumn']): ?>
 					<tr>
-							<td><?= $entry->text ?></td>
+							<td><?= $entry['text'] ?></td>
 						</tr>
 					<?php else: ?>
 						<tr>
-							<td class="jahr"><?= $entry->date ?></td>
-							<td><?= $entry->text ?></td>
+							<td class="jahr"><?= $entry['date'] ?></td>
+							<td><?= $entry['text'] ?></td>
 						</tr>
 					<?php endif; ?>
 				<?php endforeach; ?>
