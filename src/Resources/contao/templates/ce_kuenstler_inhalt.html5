@@ -1,6 +1,5 @@
 <div id="kuenstler-inhalt">
 		<?php foreach($this->blocks as $block): ?>
-			<?php var_dump($block); ?>
 			<h2><?= $block['title']; ?></h2>
 			<table>
 				<?php foreach($block['entries'] as $entry): ?>
