@@ -1,4 +1,4 @@
-<div id="kuenstler-inhalt" class=".ce_text">
+<div id="kuenstler-inhalt" class="ce_text">
 		<?php foreach($this->blocks as $block): ?>
 			<h2><?= $block['title']; ?></h2>
 			<table>
