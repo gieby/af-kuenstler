@@ -210,7 +210,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 						'label'	=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['exhib_id'],
 						'inputType'	=> 'select',
 						'options_callback'  => array('\Galerieverwaltung', 'getExhibitionIDs'),
-						'eval'              => array('mandatory' => true, 'includeBlankOption' => true,'tl_class' => 'long','chosen'=>true, 'style'=>'width: 100%; min-width: 400px;'),
+						'eval'              => array('mandatory' => true, 'includeBlankOption' => true,'tl_class' => 'long','chosen'=>true, 'style'=>'width: 100%; min-width: 400px !important;'),
 					),
 					'display_short'	=> array
 					(

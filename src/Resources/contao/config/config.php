@@ -25,3 +25,9 @@ array_insert($GLOBALS['FE_MOD'], 2, array(
 		'pdf'	=> 'yupdesign\AF\ModulePDF',
 	)
 ));
+
+array_insert($GLOBALS['CTE'], 2, array(
+	'kuenstler' => array(
+		'kuenstler_inhalt' => 'yupdesign\\AFKuenstler\\Element\\KuenstlerInhalt'
+	)
+));
