@@ -84,9 +84,11 @@ class KuenstlerInhalt extends \ContentElement
         $data = array(
           'date' => $this->formatDate($entry['date_from'],$entry['date_to']),
           'text' => $entry['entry_text']
-        )
+        );
+        
         $arrReturn[] = $data;
      }
+
     return $arrReturn;
    }
 
