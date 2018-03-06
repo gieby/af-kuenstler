@@ -54,6 +54,7 @@ class KuenstlerInhalt extends \ContentElement
         } else {
           $entries = deserialize($objKuenstler->entries_af);
           $block['entries'] = $this->formatExhibitions($entries);
+          $block['custom_title'] = 'Ausstellungen und Projekte bei art+form';
         }
 
 
