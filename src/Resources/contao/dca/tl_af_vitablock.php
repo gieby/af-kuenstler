@@ -58,9 +58,10 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 	'palettes'	=> array
 	(
 		'__selector__' => array('type'),
-		'default'	=> '{entry_legend},title,type,block_short,block_long,block_pdf;{entries_legend},entries',
-		'entries_default' => '{entry_legend},title,type,block_short,block_long,block_pdf;{entries_legend},entries',
-		'entries_af' => '{entry_legend},title,type,block_short,block_long,block_pdf;{af_legend},entries_af',
+		'default'	=> '{entry_legend},custom_title,type,block_short,block_long,block_pdf;{entries_legend},entries',
+		'entries_vita' => '{entry_legend},type,block_short,block_long,block_pdf;{entries_legend},entries',
+		'entries_default' => '{entry_legend},customtitle,type,block_short,block_long,block_pdf;{entries_legend},entries',
+		'entries_af' => '{entry_legend},type,block_short,block_long,block_pdf;{af_legend},entries_af',
 	),
 
 
@@ -84,18 +85,18 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		(
 			'sql'	=> "int(10) unsigned NOT NULL default '0'"
 		),
-		'title' => array
+		'custom_title' => array
 		(
 			'label'			=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['block_title'],
 			'inputType'	=> 'text',
-			'eval'			=> array('mandatory'=>true, 'maxlength'=>128, 'tl_class'=>'w50'),
+			'eval'			=> array('mandatory'=>false, 'maxlength'=>128, 'tl_class'=>'w50'),
 			'sql'				=> "varchar(128) NOT NULL default ''"
 		),
 		'type'	=> array
 		(
 			'label'			=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['block_type'],
 			'inputType'	=> 'select',
-			'options'		=> array('entries_default','entries_af'),
+			'options'		=> array('entries_vita','entries_default','entries_af'),
 			'reference'	=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['type_ref'],
 			'eval'			=> array('tl_class'=>'w50', 'submitOnChange' => true,),
 			'sql'				=> "varchar(128) NOT NULL default ''"

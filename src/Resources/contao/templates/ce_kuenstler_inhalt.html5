@@ -1,6 +1,8 @@
 <div id="kuenstler-inhalt" class="ce_text">
 		<?php foreach($this->blocks as $block): ?>
+			<?php if($block['custom_title'] != ''): ?>
 			<h2><?= $block['title']; ?></h2>
+			<?php endif; >
 			<table>
 				<?php foreach($block['entries'] as $entry): ?>
 					<?php if($block['dropFirstColumn'] == true): ?>
