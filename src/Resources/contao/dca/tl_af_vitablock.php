@@ -60,6 +60,8 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		'__selector__' => array('type'),
 		'default'	=> '{entry_legend},type,block_short,block_long,block_pdf',
 		'entries_vita' => '{entry_legend},type,block_short,block_long,block_pdf;{entries_legend},entries',
+		'entries_exhibitions' => '{entry_legend},type,block_short,block_long,block_pdf;{entries_legend},entries',
+		'entries_publicworks' => '{entry_legend},type,block_short,block_long,block_pdf;{entries_legend},entries',
 		'entries_default' => '{entry_legend},custom_title,type,block_short,block_long,block_pdf;{entries_legend},entries',
 		'entries_af' => '{entry_legend},type,block_short,block_long,block_pdf;{af_legend},entries_af',
 	),
@@ -96,7 +98,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		(
 			'label'			=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['block_type'],
 			'inputType'	=> 'select',
-			'options'		=> array('entries_vita','entries_default','entries_af'),
+			'options'		=> array('entries_vita','entries_exhibitons', 'entries_publicworks', 'entries_default','entries_af'),
 			'reference'	=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['type_ref'],
 			'eval'			=> array('tl_class'=>'w50 clr', 'submitOnChange' => true,),
 			'sql'				=> "varchar(128) NOT NULL default ''"

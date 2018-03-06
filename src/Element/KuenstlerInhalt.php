@@ -45,18 +45,28 @@ class KuenstlerInhalt extends \ContentElement
 
         $block = array();
 
-        $block['custom_title'] = $objKuenstler->custom_title;
+        $block['title'] = $GLOBALS['TL_LANG']['tl_af_vitablock']['type_ref'][$objKuenstler->type];
         $block['type'] = $objKuenstler->type;
-        if($block['type'] != 'entries_af') {
-          $entries = deserialize($objKuenstler->entries);
-          $block['dropFirstColumn'] = $this->canFirstColumBeDropped($entries);
-          $block['entries'] = $this->formatEntries($entries);
-        } else {
-          $entries = deserialize($objKuenstler->entries_af);
-          $block['entries'] = $this->formatExhibitions($entries);
-          $block['custom_title'] = 'Ausstellungen und Projekte bei art+form';
-        }
 
+        switch ($block['type']) {
+          case 'entries_af':
+            $entries = deserialize($objKuenstler->entries_af);
+            $block['entries'] = $this->formatExhibitions($entries);
+            break;
+          
+          case 'entries_vita':
+            $entries = deserialize($objKuenstler->entries);
+            $block['dropFirstColumn'] = $this->canFirstColumBeDropped($entries);
+            $block['entries'] = $this->formatEntries($entries);
+            $block['title'] = '';
+            break;
+          
+          default:
+            $entries = deserialize($objKuenstler->entries);
+            $block['dropFirstColumn'] = $this->canFirstColumBeDropped($entries);
+            $block['entries'] = $this->formatEntries($entries);
+            break;
+        }
 
         $blocks[] = $block;
 
@@ -96,18 +106,18 @@ class KuenstlerInhalt extends \ContentElement
    
    function formatExhibitions($block) {
      $arrReturn = array();
-     $exhibDB = $this->Database->prepare("SELECT title, date, exhib_page FROM tl_ausstellung WHERE id=?");
      foreach ($block as $entry) {
-       $exhib = $exhibDB->execute($entry['exhib_id'])->next();
+      $exhibDB = $this->Database->prepare("SELECT title, date, exhib_page FROM tl_ausstellung WHERE id=?");
+      $exhib = $exhibDB->execute($entry['exhib_id'])->next();
 
-       $exhib_url = \Controller::generateFrontendUrl(\PageModel::findByPk($exhib->exhib_page)->row());
+      $exhib_url = \Controller::generateFrontendUrl(\PageModel::findByPk($exhib->exhib_page)->row());
 
-        $data = array(
-          'date' => date('Y',$exhib->date),
-          'text' => '<a href="'.$exhib_url.'" title="'.$exhib->title.'">' . $exhib->title . '</a>'
-        );
+      $data = array(
+        'date' => date('Y',$exhib->date),
+        'text' => '<a href="'.$exhib_url.'" title="'.$exhib->title.'">' . $exhib->title . '</a>'
+      );
 
-        $arrReturn[] = $data;
+      $arrReturn[] = $data;
      }
 
     return $arrReturn;
