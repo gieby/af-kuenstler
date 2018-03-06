@@ -36,7 +36,7 @@ class KuenstlerInhalt extends \ContentElement
   {
     $objKuenstler = $this->Database->prepare(
       'SELECT custom_title, type, entries, entries_af FROM tl_af_vitablock WHERE pid=?'
-    )->execute(6);
+    )->execute($this->kuenstler);
 
     while ($objKuenstler->next()) {
         /**
