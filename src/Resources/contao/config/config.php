@@ -16,6 +16,11 @@ $GLOBALS['BE_MOD']['af_galerie']['kuenstler'] = array (
 	'tables'	=> array('tl_af_kuenstler','tl_af_vitablock')
 );
 
+if (TL_MODE == 'BE')
+{
+	$GLOBALS['TL_CSS'][] = 'bundles/af-kuenstler/css/af-kuenstler.css|static';
+}
+
 array_insert($GLOBALS['FE_MOD'], 2, array(
 	'miscellaneous' => array(
 		'kuenstler_liste' => 'yupdesign\\AFKuenstler\\Module\\KuenstlerListe',
