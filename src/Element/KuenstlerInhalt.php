@@ -45,7 +45,7 @@ class KuenstlerInhalt extends \ContentElement
 
         $block = array();
 
-        $block['title'] = $GLOBALS['TL_LANG']['tl_af_vitablock']['type_ref'][$objKuenstler->type];
+        $block['title'] = $GLOBALS['TL_LANG']['tl_content']['type_ref'][$objKuenstler->type];
         $block['type'] = $objKuenstler->type;
 
         switch ($block['type']) {
