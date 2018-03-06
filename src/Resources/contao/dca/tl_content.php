@@ -1,6 +1,6 @@
 <?php
 
-$GLOBALS['TL_DCA']['tl_content']['palettes']['kuenstler_inhalt'] = 'kuenstler';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['kuenstler_inhalt'] = '{type_legend},type,kuenstler;{template_legend:hide},customTpl;{protected_legend:hide},protected;{invisible_legend:hide},invisible,start,stop';
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['kuenstler']	= array
 (
