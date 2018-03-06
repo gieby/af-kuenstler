@@ -18,7 +18,7 @@ $GLOBALS['BE_MOD']['af_galerie']['kuenstler'] = array (
 
 if (TL_MODE == 'BE')
 {
-	$GLOBALS['TL_CSS'][] = 'bundles/yupdesignAFKuenstler/css/af-kuenstler.css|static';
+	$GLOBALS['TL_CSS'][] = 'bundles/yupdesignafkuenstler/css/af-kuenstler.css|static';
 }
 
 array_insert($GLOBALS['FE_MOD'], 2, array(
