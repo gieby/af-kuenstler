@@ -47,7 +47,7 @@ class KuenstlerInhalt extends \ContentElement
 
         $block['custom_title'] = $objKuenstler->custom_title;
         $block['type'] = $objKuenstler->type;
-        if($block['type'] == 'entries_default') {
+        if($block['type'] != 'entries_af') {
           $entries = deserialize($objKuenstler->entries);
           $block['dropFirstColumn'] = $this->canFirstColumBeDropped($entries);
           $block['entries'] = $this->formatEntries($entries);
