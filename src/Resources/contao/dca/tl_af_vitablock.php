@@ -106,7 +106,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 			'label'			=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['block_short'],
 			'inputType'	=> 'checkbox',
 			'default'		=> 1,
-			'eval'			=> array('tl_class'=>'w50'),
+			'eval'			=> array('tl_class'=>'w30 clr'),
 			'sql'				=> "char(1) NOT NULL default ''"
 		),
 		'block_long'	=> array
@@ -114,7 +114,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 			'label'			=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['block_long'],
 			'inputType'	=> 'checkbox',
 			'default'		=> 1,
-			'eval'			=> array('tl_class'=>'w50'),
+			'eval'			=> array('tl_class'=>'w30'),
 			'sql'				=> "char(1) NOT NULL default ''"
 		),
 		'block_pdf'	=> array
@@ -122,7 +122,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 			'label'			=> &$GLOBALS['TL_LANG']['tl_af_vitablock']['block_pdf'],
 			'inputType'	=> 'checkbox',
 			'default'		=> 1,
-			'eval'			=> array('tl_class'=>'w50'),
+			'eval'			=> array('tl_class'=>'w30'),
 			'sql'				=> "char(1) NOT NULL default ''"
 		),
 		'entries' => array

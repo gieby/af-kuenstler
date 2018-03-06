@@ -2,3 +2,8 @@
 	min-width: 400px;
 	display: block;
 }
+
+.w30 {
+	float: left;
+	width: 30%;
+}
