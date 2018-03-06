@@ -52,7 +52,8 @@ class KuenstlerInhalt extends \ContentElement
           $block['dropFirstColumn'] = $this->canFirstColumBeDropped($entries);
           $block['entries'] = $this->formatEntries($entries);
         } else {
-          $block['entries'] = deserialize($objKuenstler->entries_af);
+          $entries = deserialize($objKuenstler->entries_af);
+          $block['entries'] = $this->formatExhibitions($entries);
         }
 
 
@@ -84,6 +85,23 @@ class KuenstlerInhalt extends \ContentElement
         $data = array(
           'date' => $this->formatDate($entry['date_from'],$entry['date_to']),
           'text' => $entry['entry_text']
+        );
+
+        $arrReturn[] = $data;
+     }
+
+    return $arrReturn;
+   }
+   
+   function formatExhibitons($block) {
+     $arrReturn = array();
+     $exhibDB = $this->Database->prepare("SELECT title, date, exhib_page FROM tl_ausstellung WHERE id=?");
+     foreach ($block as $entry) {
+       $exhib = $exhibDB->execute($block->exhib_id)->next();
+
+        $data = array(
+          'date' => date('Y',$exhib->date),
+          'text' => $exhib->title
         );
 
         $arrReturn[] = $data;
