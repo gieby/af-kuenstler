@@ -32,7 +32,7 @@ array_insert($GLOBALS['FE_MOD'], 2, array(
 ));
 
 array_insert($GLOBALS['TL_CTE'], 2, array(
-	'kuenstler' => array(
+	'art_form' => array(
 		'kuenstler_inhalt' => 'yupdesign\\AFKuenstler\\Element\\KuenstlerInhalt',
 	),
 ));
