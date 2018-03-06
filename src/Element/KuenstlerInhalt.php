@@ -99,7 +99,7 @@ class KuenstlerInhalt extends \ContentElement
      foreach ($block as $entry) {
        $exhib = $exhibDB->execute($entry['exhib_id'])->next();
 
-       //$exhib_url = \PageModel::findByPk($exhib->exhib_page)->getFrontendUrl();
+       $exhib_url = \Controller::generateFrontendUrl(\PageModel::findByPk($exhib->exhib_page)->row());
 
         $data = array(
           'date' => date('Y',$exhib->date),
