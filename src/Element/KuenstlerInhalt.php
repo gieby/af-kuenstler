@@ -45,7 +45,16 @@ class KuenstlerInhalt extends \ContentElement
 
         $block = array();
 
-        $block['title'] = $GLOBALS['TL_LANG']['tl_content']['type_ref'][$objKuenstler->type];
+        // TODO: in TL_LANG?
+        $typeRef = array(
+          'entries_default'     => '',
+          'entries_exhibitions' => 'Ausstellungen und Ausstellungsbeteiligungen',
+          'entries_publicworks' => 'Arbeiten in öffentlichem Besitz',
+          'entries_af'          => 'Ausstellung(en) bei art+form',
+          'entries_vita'        => 'Lebenslauf',
+          )
+
+        $block['title'] = $typeRef[$objKuenstler->type];
         $block['type'] = $objKuenstler->type;
 
         switch ($block['type']) {
