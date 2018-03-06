@@ -97,9 +97,13 @@ class KuenstlerInhalt extends \ContentElement
      $arrReturn = array();
      $exhibDB = $this->Database->prepare("SELECT title, date, exhib_page FROM tl_ausstellung WHERE id=?");
      foreach ($block as $entry) {
-       $exhib = $exhibDB->execute($entry->exhib_id)->next();
+       $exhib = $exhibDB->execute($entry['exhib_id'])->next();
 
         $data = array(
+          'debug-block' => $block,
+          'debug_entry' => $entry,
+          'debug_exhib' => $exhib,
+          'debug_exhibDB' => $exhibDB,
           'date' => date('Y',$exhib->date),
           'text' => $exhib->title
         );
