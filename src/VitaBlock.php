@@ -9,6 +9,6 @@ class VitaBlock extends \Backend
 	 */
 	public function listBlocks($arrRow)
 	{
-		return '<div class="tl_content_left">' . $arrRow['title'] . '</div>';
+		return '<div class="tl_content_left">' . $GLOBALS['TL_LANG']['tl_af_vitablock']['type_ref'][$arrRow['type']] . '</div>';
 	}
 }

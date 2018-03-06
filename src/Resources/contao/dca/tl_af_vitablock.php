@@ -60,7 +60,7 @@ $GLOBALS['TL_DCA']['tl_af_vitablock'] = array
 		'__selector__' => array('type'),
 		'default'	=> '{entry_legend},custom_title,type,block_short,block_long,block_pdf;{entries_legend},entries',
 		'entries_vita' => '{entry_legend},type,block_short,block_long,block_pdf;{entries_legend},entries',
-		'entries_default' => '{entry_legend},customtitle,type,block_short,block_long,block_pdf;{entries_legend},entries',
+		'entries_default' => '{entry_legend},custom_title,type,block_short,block_long,block_pdf;{entries_legend},entries',
 		'entries_af' => '{entry_legend},type,block_short,block_long,block_pdf;{af_legend},entries_af',
 	),
 
