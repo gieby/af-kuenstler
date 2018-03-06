@@ -100,10 +100,7 @@ class KuenstlerInhalt extends \ContentElement
        $exhib = $exhibDB->execute($entry['exhib_id'])->next();
 
         $data = array(
-          'debug-block' => $block,
-          'debug_entry' => $entry,
-          'debug_exhib' => $exhib,
-          'debug_exhibDB' => $exhibDB,
+          'page' => var_dump($exhib->exhib_page),
           'date' => date('Y',$exhib->date),
           'text' => $exhib->title
         );
