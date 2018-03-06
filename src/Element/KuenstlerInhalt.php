@@ -93,7 +93,7 @@ class KuenstlerInhalt extends \ContentElement
     return $arrReturn;
    }
    
-   function formatExhibitons($block) {
+   function formatExhibitions($block) {
      $arrReturn = array();
      $exhibDB = $this->Database->prepare("SELECT title, date, exhib_page FROM tl_ausstellung WHERE id=?");
      foreach ($block as $entry) {
