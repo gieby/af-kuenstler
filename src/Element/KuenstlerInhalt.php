@@ -67,6 +67,10 @@ class KuenstlerInhalt extends \ContentElement
             $block['entries'] = $this->formatEntries($entries);
             break;
         }
+        
+        if($objKuenstler->custom_title != '') {
+          $block['title'] = $objKuenstler->custom_title;
+        }
 
         $blocks[] = $block;
 
