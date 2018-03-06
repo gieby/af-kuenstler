@@ -52,7 +52,7 @@ class KuenstlerInhalt extends \ContentElement
           'entries_publicworks' => 'Arbeiten in öffentlichem Besitz',
           'entries_af'          => 'Ausstellung(en) bei art+form',
           'entries_vita'        => 'Lebenslauf',
-          )
+        );
 
         $block['title'] = $typeRef[$objKuenstler->type];
         $block['type'] = $objKuenstler->type;
