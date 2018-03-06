@@ -35,7 +35,7 @@ class KuenstlerInhalt extends \ContentElement
   protected function compile()
   {
     $objKuenstler = $this->Database->prepare(
-      'SELECT title, entries, entries_af FROM tl_af_vitablock WHERE pid=?'
+      'SELECT custom_title, type, entries, entries_af FROM tl_af_vitablock WHERE pid=?'
     )->execute(6);
 
     while ($objKuenstler->next()) {
@@ -47,7 +47,7 @@ class KuenstlerInhalt extends \ContentElement
 
         $block['custom_title'] = $objKuenstler->custom_title;
         $block['type'] = $objKuenstler->type;
-        if($block['type'] == 'default') {
+        if($block['type'] == 'entries_default') {
           $entries = deserialize($objKuenstler->entries);
           $block['dropFirstColumn'] = $this->canFirstColumBeDropped($entries);
           $block['entries'] = $this->formatEntries($entries);
